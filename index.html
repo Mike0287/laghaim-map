@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laghaim World Map</title>
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        html, body, #map {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background: #111;
+        }
+        .leaflet-tooltip.spawn-tooltip {
+            background-color: rgba(10, 10, 10, 0.9);
+            border: 1px solid #ff4444;
+            color: #fff;
+            padding: 6px 10px;
+            border-radius: 4px;
+            font-size: 13px;
+        }
+        #map-selector-container {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            z-index: 1000;
+            background: rgba(20, 20, 20, 0.9);
+            padding: 8px 12px;
+            border-radius: 6px;
+            border: 1px solid #444;
+            font-family: sans-serif;
+        }
+        #map-select {
+            background: #2a2a2a;
+            color: #fff;
+            border: 1px solid #555;
+            padding: 6px 10px;
+            border-radius: 4px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="map"></div>
+
+    <div id="map-selector-container">
+        <label for="map-select" style="color: #bbb; font-size: 12px; display: block; margin-bottom: 4px;">Zone Map:</label>
+        <select id="map-select" onchange="switchMap(this.value)">
+            <option value="laglamia">Laglamia</option>
+            <option value="dekardi">Dekardi</option>
+            <option value="dekadun_f3">Dekadun F3</option>
+            <option value="dekadun_f4">Dekadun F4</option>
+            <option value="dekeren_f2">Dekeren F2</option>
+            <option value="shilon">Shilon</option>
+        </select>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        const MAP_CONFIGS = {
+            laglamia: { name: "Laglamia", image: "maps/Laglamia.jpg", width: 1792, height: 2400 },
+            dekardi: { name: "Dekardi", image: "maps/Dekardi.jpg", width: 2048, height: 2048 },
+            dekadun_f3: { name: "Dekadun F3", image: "maps/Dekadun F3.jpg", width: 2048, height: 2048 },
+            dekadun_f4: { name: "Dekadun F4", image: "maps/Dekadun F4.jpg", width: 2048, height: 2048 },
+            dekeren_f2: { name: "Dekeren F2", image: "maps/Dekeren F2.jpg", width: 1440, height: 2912 },
+            shilon: { name: "Shilon", image: "maps/Shilon.jpg", width: 2048, height: 2048 }
+        };
+
+        let currentMapId = 'laglamia';
+        let allSpawnsData = {};
+        let currentOverlay = null;
+
+        const map = L.map('map', {
+            crs: L.CRS.Simple,
+            minZoom: -2,
+            maxZoom: 3,
+            zoomSnap: 0.5
+        });
+
+        const spawnLayer = L.layerGroup().addTo(map);
+
+        function switchMap(mapId) {
+            currentMapId = mapId;
+            const config = MAP_CONFIGS[mapId];
+            if (!config) return;
+
+            if (currentOverlay) {
+                map.removeLayer(currentOverlay);
+            }
+            spawnLayer.clearLayers();
+
+            const bounds = [[0, 0], [config.height, config.width]];
+            currentOverlay = L.imageOverlay(config.image, bounds).addTo(map);
+            map.fitBounds(bounds);
+            map.setView([config.height / 2, config.width / 2], 0);
+
+            renderSpawnsForCurrentMap();
+        }
+
+        function renderSpawnsForCurrentMap() {
+            const spawns = allSpawnsData[currentMapId] || [];
+            
+            spawns.forEach(item => {
+                let layer;
+                if (item.type === 'polygon') layer = L.polygon(item.latlngs, item.options);
+                else if (item.type === 'rectangle') layer = L.rectangle(item.latlngs, item.options);
+                else if (item.type === 'circle') layer = L.circle(item.latlngs, { ...item.options, radius: item.radius });
+                else if (item.type === 'marker') layer = L.marker(item.latlngs, item.options);
+
+                if (layer && item.meta) {
+                    const borderColor = (item.options && item.options.color) ? item.options.color : '#ff4444';
+                    layer.bindTooltip(`<b>${item.meta.name}</b><br>Respawn: ${item.meta.timer}`, {
+                        direction: 'top',
+                        className: 'spawn-tooltip'
+                    });
+                    layer.on('tooltipopen', function(e) {
+                        if (e.tooltip && e.tooltip._container) {
+                            e.tooltip._container.style.borderColor = borderColor;
+                        }
+                    });
+                    spawnLayer.addLayer(layer);
+                }
+            });
+        }
+
+        fetch('spawns.json')
+            .then(res => res.json())
+            .then(data => {
+                allSpawnsData = data;
+                switchMap(currentMapId);
+            })
+            .catch(err => {
+                console.warn("No spawns.json found or failed to parse. Initializing blank maps.", err);
+                switchMap(currentMapId);
+            });
+    </script>
+</body>
+</html>

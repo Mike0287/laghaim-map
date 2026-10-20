@@ -1,0 +1,703 @@
+{
+  "0": {
+    "type": "polygon",
+    "latlngs": [
+      [
+        {
+          "lat": 181,
+          "lng": 528
+        },
+        {
+          "lat": 205,
+          "lng": 690
+        },
+        {
+          "lat": 334,
+          "lng": 653
+        },
+        {
+          "lat": 313,
+          "lng": 503
+        }
+      ]
+    ],
+    "radius": null,
+    "options": {
+      "stroke": true,
+      "color": "#ff3333",
+      "weight": 2,
+      "opacity": 0.5,
+      "fill": true,
+      "fillColor": "#ff0000",
+      "fillOpacity": 0.35,
+      "clickable": true,
+      "dashArray": null,
+      "maintainColor": false,
+      "smoothFactor": 1,
+      "noClip": false,
+      "lineCap": "round",
+      "lineJoin": "round",
+      "dashOffset": null,
+      "fillRule": "evenodd",
+      "interactive": true,
+      "bubblingMouseEvents": true,
+      "pane": "overlayPane",
+      "attribution": null
+    },
+    "meta": {
+      "name": "Waddles the Castaway",
+      "timer": "Unknown"
+    }
+  },
+  "1": {
+    "type": "polygon",
+    "latlngs": [
+      [
+        {
+          "lat": 186,
+          "lng": 1114
+        },
+        {
+          "lat": 302,
+          "lng": 1063
+        },
+        {
+          "lat": 409,
+          "lng": 1109
+        },
+        {
+          "lat": 468,
+          "lng": 1191
+        },
+        {
+          "lat": 438,
+          "lng": 1342
+        },
+        {
+          "lat": 235,
+          "lng": 1315
+        },
+        {
+          "lat": 150,
+          "lng": 1227
+        }
+      ]
+    ],
+    "radius": null,
+    "options": {
+      "stroke": true,
+      "color": "#ff3333",
+      "weight": 2,
+      "opacity": 0.5,
+      "fill": true,
+      "fillColor": "#ff0000",
+      "fillOpacity": 0.35,
+      "clickable": true
+    },
+    "meta": {
+      "name": "Old Snapjaw",
+      "timer": "Unknown"
+    }
+  },
+  "2": {
+    "type": "polygon",
+    "latlngs": [
+      [
+        {
+          "lat": 500.5,
+          "lng": 1034
+        },
+        {
+          "lat": 431.5,
+          "lng": 1049
+        },
+        {
+          "lat": 378,
+          "lng": 888.5
+        },
+        {
+          "lat": 436.5,
+          "lng": 805.5
+        },
+        {
+          "lat": 495.5,
+          "lng": 919.5
+        }
+      ]
+    ],
+    "radius": null,
+    "options": {
+      "stroke": true,
+      "color": "#ff3333",
+      "weight": 2,
+      "opacity": 0.5,
+      "fill": true,
+      "fillColor": "#ff0000",
+      "fillOpacity": 0.35,
+      "clickable": true
+    },
+    "meta": {
+      "name": "Nibbles, Rabbit Gang Scout",
+      "timer": "Unknown"
+    }
+  },
+  "laglamia": [
+    {
+      "type": "polygon",
+      "latlngs": [
+        [
+          {
+            "lat": 170,
+            "lng": 1110
+          },
+          {
+            "lat": 192,
+            "lng": 1265
+          },
+          {
+            "lat": 346,
+            "lng": 1312
+          },
+          {
+            "lat": 530,
+            "lng": 1351
+          },
+          {
+            "lat": 574,
+            "lng": 1242
+          },
+          {
+            "lat": 517,
+            "lng": 1128
+          },
+          {
+            "lat": 357,
+            "lng": 1107
+          }
+        ]
+      ],
+      "radius": null,
+      "options": {
+        "stroke": true,
+        "color": "#960a87",
+        "weight": 2,
+        "opacity": 0.5,
+        "fill": true,
+        "fillColor": "#960a87",
+        "fillOpacity": 0.35,
+        "clickable": true,
+        "dashArray": null,
+        "maintainColor": false,
+        "smoothFactor": 1,
+        "noClip": false,
+        "lineCap": "round",
+        "lineJoin": "round",
+        "dashOffset": null,
+        "fillRule": "evenodd",
+        "interactive": true,
+        "bubblingMouseEvents": true,
+        "pane": "overlayPane",
+        "attribution": null
+      },
+      "meta": {
+        "name": "Old Snapjaw",
+        "timer": "Unknown"
+      }
+    },
+    {
+      "type": "polygon",
+      "latlngs": [
+        [
+          {
+            "lat": 185,
+            "lng": 535
+          },
+          {
+            "lat": 206,
+            "lng": 694
+          },
+          {
+            "lat": 275,
+            "lng": 726
+          },
+          {
+            "lat": 334,
+            "lng": 675
+          },
+          {
+            "lat": 320,
+            "lng": 569
+          },
+          {
+            "lat": 243,
+            "lng": 513
+          }
+        ]
+      ],
+      "radius": null,
+      "options": {
+        "stroke": true,
+        "color": "#960a87",
+        "weight": 2,
+        "opacity": 0.5,
+        "fill": true,
+        "fillColor": "#960a87",
+        "fillOpacity": 0.35,
+        "clickable": true,
+        "smoothFactor": 1,
+        "noClip": false,
+        "lineCap": "round",
+        "lineJoin": "round",
+        "dashArray": null,
+        "dashOffset": null,
+        "fillRule": "evenodd",
+        "interactive": true,
+        "bubblingMouseEvents": true,
+        "pane": "overlayPane",
+        "attribution": null
+      },
+      "meta": {
+        "name": "Waddles the Castaway",
+        "timer": "Unknown"
+      }
+    },
+    {
+      "type": "polygon",
+      "latlngs": [
+        [
+          {
+            "lat": 591,
+            "lng": 1021
+          },
+          {
+            "lat": 553,
+            "lng": 884
+          },
+          {
+            "lat": 423,
+            "lng": 873
+          },
+          {
+            "lat": 371,
+            "lng": 894
+          },
+          {
+            "lat": 378,
+            "lng": 964
+          },
+          {
+            "lat": 403,
+            "lng": 1054
+          },
+          {
+            "lat": 497,
+            "lng": 1056
+          }
+        ]
+      ],
+      "radius": null,
+      "options": {
+        "stroke": true,
+        "color": "#960a87",
+        "weight": 2,
+        "opacity": 0.5,
+        "fill": true,
+        "fillColor": "#960a87",
+        "fillOpacity": 0.35,
+        "clickable": true,
+        "smoothFactor": 1,
+        "noClip": false,
+        "lineCap": "round",
+        "lineJoin": "round",
+        "dashArray": null,
+        "dashOffset": null,
+        "fillRule": "evenodd",
+        "interactive": true,
+        "bubblingMouseEvents": true,
+        "pane": "overlayPane",
+        "attribution": null
+      },
+      "meta": {
+        "name": "Nibbles, Rabbit Gang Scout",
+        "timer": "Unknown"
+      }
+    }
+  ],
+  "dekardi": [
+    {
+      "type": "polygon",
+      "latlngs": [
+        [
+          {
+            "lat": 1347,
+            "lng": 576
+          },
+          {
+            "lat": 1237,
+            "lng": 465
+          },
+          {
+            "lat": 1219,
+            "lng": 588
+          },
+          {
+            "lat": 1288,
+            "lng": 692
+          },
+          {
+            "lat": 1357,
+            "lng": 681
+          }
+        ]
+      ],
+      "radius": null,
+      "options": {
+        "stroke": true,
+        "color": "#ff3333",
+        "weight": 2,
+        "opacity": 0.5,
+        "fill": true,
+        "fillColor": "#ff3333",
+        "fillOpacity": 0.35,
+        "clickable": true
+      },
+      "meta": {
+        "name": "Grumpjaw",
+        "timer": "Unknown"
+      }
+    },
+    {
+      "type": "polygon",
+      "latlngs": [
+        [
+          {
+            "lat": 1175,
+            "lng": 552
+          },
+          {
+            "lat": 1173,
+            "lng": 399
+          },
+          {
+            "lat": 1028,
+            "lng": 353
+          },
+          {
+            "lat": 946,
+            "lng": 405
+          },
+          {
+            "lat": 966,
+            "lng": 549
+          },
+          {
+            "lat": 1075,
+            "lng": 585
+          }
+        ]
+      ],
+      "radius": null,
+      "options": {
+        "stroke": true,
+        "color": "#ff3333",
+        "weight": 2,
+        "opacity": 0.5,
+        "fill": true,
+        "fillColor": "#ff3333",
+        "fillOpacity": 0.35,
+        "clickable": true
+      },
+      "meta": {
+        "name": "Knuckles the Enforcer",
+        "timer": "Unknown"
+      }
+    },
+    {
+      "type": "polygon",
+      "latlngs": [
+        [
+          {
+            "lat": 1200,
+            "lng": 298
+          },
+          {
+            "lat": 1252,
+            "lng": 225
+          },
+          {
+            "lat": 1341,
+            "lng": 296
+          },
+          {
+            "lat": 1402,
+            "lng": 385
+          },
+          {
+            "lat": 1373,
+            "lng": 471
+          },
+          {
+            "lat": 1312,
+            "lng": 487
+          },
+          {
+            "lat": 1272,
+            "lng": 463
+          },
+          {
+            "lat": 1272,
+            "lng": 369
+          }
+        ]
+      ],
+      "radius": null,
+      "options": {
+        "stroke": true,
+        "color": "#ff3333",
+        "weight": 2,
+        "opacity": 0.5,
+        "fill": true,
+        "fillColor": "#ff3333",
+        "fillOpacity": 0.35,
+        "clickable": true
+      },
+      "meta": {
+        "name": "Boss Whiskers (Kagol)",
+        "timer": "Unknown"
+      }
+    }
+  ],
+  "dekadun_f3": [
+    {
+      "type": "polygon",
+      "latlngs": [
+        [
+          {
+            "lat": 724,
+            "lng": 44
+          },
+          {
+            "lat": 42,
+            "lng": 56
+          },
+          {
+            "lat": 36,
+            "lng": 160
+          },
+          {
+            "lat": 260,
+            "lng": 208
+          },
+          {
+            "lat": 404,
+            "lng": 344
+          },
+          {
+            "lat": 602,
+            "lng": 496
+          },
+          {
+            "lat": 728,
+            "lng": 490
+          }
+        ]
+      ],
+      "radius": null,
+      "options": {
+        "stroke": true,
+        "color": "#ff3333",
+        "weight": 2,
+        "opacity": 0.5,
+        "fill": true,
+        "fillColor": "#ff3333",
+        "fillOpacity": 0.35,
+        "clickable": true,
+        "dashArray": null,
+        "maintainColor": false,
+        "smoothFactor": 1,
+        "noClip": false,
+        "lineCap": "round",
+        "lineJoin": "round",
+        "dashOffset": null,
+        "fillRule": "evenodd",
+        "interactive": true,
+        "bubblingMouseEvents": true,
+        "pane": "overlayPane",
+        "attribution": null
+      },
+      "meta": {
+        "name": "Thornling",
+        "timer": "Unknown"
+      }
+    },
+    {
+      "type": "polygon",
+      "latlngs": [
+        [
+          {
+            "lat": 696,
+            "lng": 936
+          },
+          {
+            "lat": 420,
+            "lng": 960
+          },
+          {
+            "lat": 420,
+            "lng": 1226
+          },
+          {
+            "lat": 406,
+            "lng": 1460
+          },
+          {
+            "lat": 728,
+            "lng": 1564
+          }
+        ]
+      ],
+      "radius": null,
+      "options": {
+        "stroke": true,
+        "color": "#ff3333",
+        "weight": 2,
+        "opacity": 0.5,
+        "fill": true,
+        "fillColor": "#ff3333",
+        "fillOpacity": 0.35,
+        "clickable": true
+      },
+      "meta": {
+        "name": "Pebblefist",
+        "timer": "Unknown"
+      }
+    }
+  ],
+  "dekadun_f4": [
+    {
+      "type": "polygon",
+      "latlngs": [
+        [
+          {
+            "lat": 1982,
+            "lng": 1162
+          },
+          {
+            "lat": 1760,
+            "lng": 1188
+          },
+          {
+            "lat": 1730,
+            "lng": 1480
+          },
+          {
+            "lat": 1968,
+            "lng": 1648
+          }
+        ]
+      ],
+      "radius": null,
+      "options": {
+        "stroke": true,
+        "color": "#ff3333",
+        "weight": 2,
+        "opacity": 0.5,
+        "fill": true,
+        "fillColor": "#ff3333",
+        "fillOpacity": 0.35,
+        "clickable": true
+      },
+      "meta": {
+        "name": "Grubnash the Orchard Ogre",
+        "timer": "Unknown"
+      }
+    },
+    {
+      "type": "polygon",
+      "latlngs": [
+        [
+          {
+            "lat": 860,
+            "lng": 940
+          },
+          {
+            "lat": 1176,
+            "lng": 910
+          },
+          {
+            "lat": 1102,
+            "lng": 640
+          },
+          {
+            "lat": 814,
+            "lng": 636
+          }
+        ]
+      ],
+      "radius": null,
+      "options": {
+        "stroke": true,
+        "color": "#ff3333",
+        "weight": 2,
+        "opacity": 0.5,
+        "fill": true,
+        "fillColor": "#ff3333",
+        "fillOpacity": 0.35,
+        "clickable": true
+      },
+      "meta": {
+        "name": "Elderbark the Ancient",
+        "timer": "Unknown"
+      }
+    }
+  ],
+  "dekeren_f2": [],
+  "shilon": [
+    {
+      "type": "polygon",
+      "latlngs": [
+        [
+          {
+            "lat": 966,
+            "lng": 1492
+          },
+          {
+            "lat": 874,
+            "lng": 1378
+          },
+          {
+            "lat": 890,
+            "lng": 1288
+          },
+          {
+            "lat": 1002,
+            "lng": 1280
+          },
+          {
+            "lat": 1064,
+            "lng": 1364
+          },
+          {
+            "lat": 1052,
+            "lng": 1502
+          }
+        ]
+      ],
+      "radius": null,
+      "options": {
+        "stroke": true,
+        "color": "#ff3333",
+        "weight": 2,
+        "opacity": 0.5,
+        "fill": true,
+        "fillColor": "#ff3333",
+        "fillOpacity": 0.35,
+        "clickable": true
+      },
+      "meta": {
+        "name": "Goldtooth the Loan Shark",
+        "timer": "Unknown"
+      }
+    }
+  ]
+}
