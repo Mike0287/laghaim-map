@@ -27,7 +27,7 @@
             margin: 0;
             padding: 0;
             background: #0a0a0c;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             overflow: hidden;
         }
 
@@ -37,7 +37,7 @@
             top: 0;
             left: 0;
             bottom: 0;
-            width: 260px;
+            width: 290px;
             background: var(--bg-panel);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
@@ -53,9 +53,8 @@
             transform: translateX(-100%);
         }
 
-        /* Sidebar Header */
         .sidebar-header {
-            padding: 20px 16px;
+            padding: 18px 16px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.08);
             display: flex;
             align-items: center;
@@ -64,18 +63,18 @@
 
         .sidebar-header h1 {
             margin: 0;
-            font-size: 16px;
+            font-size: 15px;
             letter-spacing: 1.5px;
             text-transform: uppercase;
             color: var(--accent-gold);
             font-weight: 700;
         }
 
-        /* Map Zone List */
+        /* Zone & Boss Accordion */
         .zone-list {
             list-style: none;
             margin: 0;
-            padding: 12px 10px;
+            padding: 10px 8px;
             overflow-y: auto;
             flex: 1;
             display: flex;
@@ -83,33 +82,48 @@
             gap: 6px;
         }
 
-        .zone-btn {
-            width: 100%;
-            background: transparent;
-            border: 1px solid transparent;
-            color: var(--text-main);
-            padding: 10px 14px;
+        .zone-group {
+            display: flex;
+            flex-direction: column;
             border-radius: 6px;
-            font-size: 13px;
-            font-weight: 500;
+            overflow: hidden;
+            border: 1px solid transparent;
+            background: rgba(255, 255, 255, 0.02);
+            transition: border-color 0.2s;
+        }
+
+        .zone-group.active {
+            border-color: rgba(212, 175, 55, 0.35);
+        }
+
+        .zone-header {
             display: flex;
             align-items: center;
             justify-content: space-between;
+            padding: 10px 12px;
+            background: transparent;
+            border: none;
+            color: var(--text-main);
+            font-size: 13px;
+            font-weight: 600;
             cursor: pointer;
             text-align: left;
-            transition: all 0.15s ease-in-out;
+            transition: background 0.15s;
         }
 
-        .zone-btn:hover {
+        .zone-header:hover {
             background: var(--accent-hover);
-            border-color: rgba(255, 255, 255, 0.1);
         }
 
-        .zone-btn.active {
+        .zone-group.active .zone-header {
+            color: var(--accent-gold);
             background: var(--accent-active);
-            border-color: var(--accent-gold);
-            color: #fff;
-            box-shadow: 0 0 12px rgba(212, 175, 55, 0.15);
+        }
+
+        .zone-header .meta-wrap {
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .badge {
@@ -122,16 +136,81 @@
             font-weight: 600;
         }
 
-        .zone-btn.active .badge {
+        .zone-group.active .badge {
             border-color: var(--accent-gold);
             color: var(--accent-gold);
         }
 
-        /* Floating Sidebar Toggle Button */
+        .accordion-arrow {
+            font-size: 10px;
+            transition: transform 0.2s ease;
+            color: var(--text-dim);
+        }
+
+        .zone-group.expanded .accordion-arrow {
+            transform: rotate(90deg);
+            color: var(--accent-gold);
+        }
+
+        /* Boss List inside each map */
+        .boss-sublist {
+            list-style: none;
+            margin: 0;
+            padding: 4px 6px 8px 6px;
+            display: none;
+            flex-direction: column;
+            gap: 3px;
+            background: rgba(0, 0, 0, 0.25);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .zone-group.expanded .boss-sublist {
+            display: flex;
+        }
+
+        .boss-btn {
+            background: transparent;
+            border: 1px solid transparent;
+            color: var(--text-dim);
+            padding: 6px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            text-align: left;
+            transition: all 0.15s;
+        }
+
+        .boss-btn:hover {
+            background: rgba(255, 255, 255, 0.06);
+            color: #fff;
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .boss-btn.highlighted {
+            background: rgba(212, 175, 55, 0.2);
+            color: #fff;
+            border-color: var(--accent-gold);
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.25);
+        }
+
+        .boss-timer {
+            font-size: 10px;
+            color: #7d8590;
+        }
+
+        .boss-btn:hover .boss-timer,
+        .boss-btn.highlighted .boss-timer {
+            color: var(--accent-gold);
+        }
+
+        /* Sidebar Toggle */
         #sidebar-toggle {
             position: absolute;
             top: 15px;
-            left: 275px;
+            left: 305px;
             z-index: 1001;
             background: var(--bg-panel);
             border: 1px solid var(--border-panel);
@@ -166,6 +245,32 @@
             line-height: 1.4;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
         }
+
+        /* Pulse / Flash Vector Animation */
+        @keyframes vectorPulse {
+            0% {
+                stroke: #ffffff;
+                stroke-width: 6;
+                stroke-opacity: 1;
+                fill-opacity: 0.9;
+            }
+            50% {
+                stroke: #ffff00;
+                stroke-width: 10;
+                stroke-opacity: 1;
+                fill-opacity: 0.7;
+            }
+            100% {
+                stroke: #ffffff;
+                stroke-width: 6;
+                stroke-opacity: 1;
+                fill-opacity: 0.9;
+            }
+        }
+
+        .vector-flash path {
+            animation: vectorPulse 0.45s ease-in-out infinite alternate;
+        }
     </style>
 </head>
 <body>
@@ -175,7 +280,7 @@
             <h1>Laghaim Maps</h1>
         </div>
         <ul class="zone-list" id="zone-list">
-            <!-- Buttons dynamically populated -->
+            <!-- Dynamically populated -->
         </ul>
     </aside>
 
@@ -197,6 +302,8 @@
         let currentMapId = 'laglamia';
         let allSpawnsData = {};
         let currentOverlay = null;
+        let spawnedLayers = []; // Stores references to active map vector layers
+        let flashInterval = null;
 
         const map = L.map('map', {
             crs: L.CRS.Simple,
@@ -207,7 +314,7 @@
             attributionControl: false
         });
 
-        const spawnLayer = L.layerGroup().addTo(map);
+        const spawnLayerGroup = L.layerGroup().addTo(map);
 
         function renderSidebar() {
             const list = document.getElementById('zone-list');
@@ -215,22 +322,67 @@
 
             Object.keys(MAP_CONFIGS).forEach(key => {
                 const config = MAP_CONFIGS[key];
-                const count = (allSpawnsData[key] || []).length;
+                const spawns = allSpawnsData[key] || [];
+                const isActive = (key === currentMapId);
 
-                const li = document.createElement('li');
-                const btn = document.createElement('button');
-                btn.className = `zone-btn ${key === currentMapId ? 'active' : ''}`;
-                btn.onclick = () => switchMap(key);
-                btn.innerHTML = `
+                const group = document.createElement('li');
+                group.className = `zone-group ${isActive ? 'active expanded' : ''}`;
+                group.id = `zone-group-${key}`;
+
+                // Header button (Accordion Toggle & Map Switcher)
+                const header = document.createElement('button');
+                header.className = 'zone-header';
+                header.onclick = () => {
+                    if (currentMapId !== key) {
+                        switchMap(key);
+                    } else {
+                        group.classList.toggle('expanded');
+                    }
+                };
+
+                header.innerHTML = `
                     <span>${config.name}</span>
-                    <span class="badge" title="${count} pinned locations">${count}</span>
+                    <div class="meta-wrap">
+                        <span class="badge">${spawns.length}</span>
+                        <span class="accordion-arrow">▶</span>
+                    </div>
                 `;
-                li.appendChild(btn);
-                list.appendChild(li);
+                group.appendChild(header);
+
+                // Sublist of bosses
+                if (spawns.length > 0) {
+                    const sublist = document.createElement('ul');
+                    sublist.className = 'boss-sublist';
+
+                    spawns.forEach((spawn, idx) => {
+                        const bossLi = document.createElement('li');
+                        const bossBtn = document.createElement('button');
+                        bossBtn.className = 'boss-btn';
+                        bossBtn.id = `boss-btn-${key}-${idx}`;
+                        bossBtn.onclick = (e) => {
+                            e.stopPropagation();
+                            focusSpawn(key, idx);
+                        };
+
+                        const bossName = (spawn.meta && spawn.meta.name) ? spawn.meta.name : `Spawn #${idx + 1}`;
+                        const bossTimer = (spawn.meta && spawn.meta.timer) ? spawn.meta.timer : '';
+
+                        bossBtn.innerHTML = `
+                            <span>${bossName}</span>
+                            <span class="boss-timer">${bossTimer}</span>
+                        `;
+                        bossLi.appendChild(bossBtn);
+                        sublist.appendChild(bossLi);
+                    });
+
+                    group.appendChild(sublist);
+                }
+
+                list.appendChild(group);
             });
         }
 
-        function switchMap(mapId) {
+        function switchMap(mapId, onReady) {
             currentMapId = mapId;
             const config = MAP_CONFIGS[mapId];
             if (!config) return;
@@ -238,49 +390,119 @@
             if (currentOverlay) {
                 map.removeLayer(currentOverlay);
             }
-            spawnLayer.clearLayers();
+            spawnLayerGroup.clearLayers();
+            spawnedLayers = [];
 
             const bounds = [[0, 0], [config.height, config.width]];
             currentOverlay = L.imageOverlay(config.image, bounds).addTo(map);
 
-            // Fit the full map image cleanly into the visible window with padding
             map.fitBounds(bounds, { padding: [30, 30] });
 
             renderSpawnsForCurrentMap();
             renderSidebar();
+
+            if (onReady) onReady();
         }
 
         function renderSpawnsForCurrentMap() {
             const spawns = allSpawnsData[currentMapId] || [];
 
-            spawns.forEach(item => {
+            spawns.forEach((item, idx) => {
                 let layer;
                 if (item.type === 'polygon') layer = L.polygon(item.latlngs, item.options);
                 else if (item.type === 'rectangle') layer = L.rectangle(item.latlngs, item.options);
                 else if (item.type === 'circle') layer = L.circle(item.latlngs, { ...item.options, radius: item.radius });
                 else if (item.type === 'marker') layer = L.marker(item.latlngs, item.options);
 
-                if (layer && item.meta) {
-                    const borderColor = (item.options && item.options.color) ? item.options.color : '#ff4444';
-                    layer.bindTooltip(`<strong>${item.meta.name}</strong><br><span style="color: #bbb;">Respawn:</span> ${item.meta.timer}`, {
-                        direction: 'top',
-                        className: 'spawn-tooltip'
+                if (layer) {
+                    layer.spawnIndex = idx;
+                    layer.originalOptions = { ...item.options };
+
+                    if (item.meta) {
+                        const borderColor = (item.options && item.options.color) ? item.options.color : '#ff4444';
+                        layer.bindTooltip(`<strong>${item.meta.name}</strong><br><span style="color: #bbb;">Respawn:</span> ${item.meta.timer}`, {
+                            direction: 'top',
+                            className: 'spawn-tooltip'
+                        });
+                        layer.on('tooltipopen', function(e) {
+                            if (e.tooltip && e.tooltip._container) {
+                                e.tooltip._container.style.borderColor = borderColor;
+                            }
+                        });
+                    }
+
+                    // Clicking the shape directly selects it in the sidebar
+                    layer.on('click', () => {
+                        highlightSidebarBoss(currentMapId, idx);
                     });
-                    layer.on('tooltipopen', function(e) {
-                        if (e.tooltip && e.tooltip._container) {
-                            e.tooltip._container.style.borderColor = borderColor;
-                        }
-                    });
-                    spawnLayer.addLayer(layer);
+
+                    spawnLayerGroup.addLayer(layer);
+                    spawnedLayers[idx] = layer;
                 }
             });
+        }
+
+        function focusSpawn(mapId, spawnIdx) {
+            // If selecting a boss from a different map, load that map first
+            if (currentMapId !== mapId) {
+                switchMap(mapId, () => {
+                    executeZoomAndFlash(spawnIdx);
+                });
+            } else {
+                executeZoomAndFlash(spawnIdx);
+            }
+
+            highlightSidebarBoss(mapId, spawnIdx);
+        }
+
+        function executeZoomAndFlash(spawnIdx) {
+            const layer = spawnedLayers[spawnIdx];
+            if (!layer) return;
+
+            // Pan and zoom smoothly to the vector target
+            if (layer.getBounds) {
+                map.flyToBounds(layer.getBounds(), { maxZoom: 1, padding: [80, 80], duration: 0.6 });
+            } else if (layer.getLatLng) {
+                map.flyTo(layer.getLatLng(), 0.5, { duration: 0.6 });
+            }
+
+            layer.openTooltip();
+            flashLayer(layer);
+        }
+
+        function flashLayer(layer) {
+            if (layer._path) {
+                // Add CSS pulse class to SVG path element
+                layer._path.classList.add('vector-flash');
+                setTimeout(() => {
+                    if (layer._path) {
+                        layer._path.classList.remove('vector-flash');
+                    }
+                }, 2200);
+            } else if (layer instanceof L.Marker && layer._icon) {
+                // Marker icon pulse
+                layer._icon.style.filter = 'drop-shadow(0 0 16px gold) brightness(1.8)';
+                layer._icon.style.transition = 'all 0.3s ease';
+                setTimeout(() => {
+                    if (layer._icon) {
+                        layer._icon.style.filter = '';
+                    }
+                }, 2200);
+            }
+        }
+
+        function highlightSidebarBoss(mapId, spawnIdx) {
+            document.querySelectorAll('.boss-btn').forEach(btn => btn.classList.remove('highlighted'));
+            const btn = document.getElementById(`boss-btn-${mapId}-${spawnIdx}`);
+            if (btn) {
+                btn.classList.add('highlighted');
+                btn.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
         }
 
         function toggleSidebar() {
             const sidebar = document.getElementById('sidebar');
             sidebar.classList.toggle('collapsed');
-            
-            // Allow CSS transition to finish before recalculating leaflet sizing
             setTimeout(() => {
                 map.invalidateSize();
             }, 300);
