@@ -359,7 +359,18 @@
         "fill": true,
         "fillColor": "#ff3333",
         "fillOpacity": 0.35,
-        "clickable": true
+        "clickable": true,
+        "smoothFactor": 1,
+        "noClip": false,
+        "lineCap": "round",
+        "lineJoin": "round",
+        "dashArray": null,
+        "dashOffset": null,
+        "fillRule": "evenodd",
+        "interactive": true,
+        "bubblingMouseEvents": true,
+        "pane": "overlayPane",
+        "attribution": null
       },
       "meta": {
         "name": "Grumpjaw",
@@ -405,7 +416,18 @@
         "fill": true,
         "fillColor": "#ff3333",
         "fillOpacity": 0.35,
-        "clickable": true
+        "clickable": true,
+        "smoothFactor": 1,
+        "noClip": false,
+        "lineCap": "round",
+        "lineJoin": "round",
+        "dashArray": null,
+        "dashOffset": null,
+        "fillRule": "evenodd",
+        "interactive": true,
+        "bubblingMouseEvents": true,
+        "pane": "overlayPane",
+        "attribution": null
       },
       "meta": {
         "name": "Knuckles the Enforcer",
@@ -459,7 +481,18 @@
         "fill": true,
         "fillColor": "#ff3333",
         "fillOpacity": 0.35,
-        "clickable": true
+        "clickable": true,
+        "smoothFactor": 1,
+        "noClip": false,
+        "lineCap": "round",
+        "lineJoin": "round",
+        "dashArray": null,
+        "dashOffset": null,
+        "fillRule": "evenodd",
+        "interactive": true,
+        "bubblingMouseEvents": true,
+        "pane": "overlayPane",
+        "attribution": null
       },
       "meta": {
         "name": "Boss Whiskers (Kagol)",
@@ -565,7 +598,18 @@
         "fill": true,
         "fillColor": "#ff3333",
         "fillOpacity": 0.35,
-        "clickable": true
+        "clickable": true,
+        "smoothFactor": 1,
+        "noClip": false,
+        "lineCap": "round",
+        "lineJoin": "round",
+        "dashArray": null,
+        "dashOffset": null,
+        "fillRule": "evenodd",
+        "interactive": true,
+        "bubblingMouseEvents": true,
+        "pane": "overlayPane",
+        "attribution": null
       },
       "meta": {
         "name": "Pebblefist",
@@ -605,7 +649,18 @@
         "fill": true,
         "fillColor": "#ff3333",
         "fillOpacity": 0.35,
-        "clickable": true
+        "clickable": true,
+        "smoothFactor": 1,
+        "noClip": false,
+        "lineCap": "round",
+        "lineJoin": "round",
+        "dashArray": null,
+        "dashOffset": null,
+        "fillRule": "evenodd",
+        "interactive": true,
+        "bubblingMouseEvents": true,
+        "pane": "overlayPane",
+        "attribution": null
       },
       "meta": {
         "name": "Grubnash the Orchard Ogre",
@@ -643,7 +698,18 @@
         "fill": true,
         "fillColor": "#ff3333",
         "fillOpacity": 0.35,
-        "clickable": true
+        "clickable": true,
+        "smoothFactor": 1,
+        "noClip": false,
+        "lineCap": "round",
+        "lineJoin": "round",
+        "dashArray": null,
+        "dashOffset": null,
+        "fillRule": "evenodd",
+        "interactive": true,
+        "bubblingMouseEvents": true,
+        "pane": "overlayPane",
+        "attribution": null
       },
       "meta": {
         "name": "Elderbark the Ancient",
@@ -651,35 +717,34 @@
       }
     }
   ],
-  "dekeren_f2": [],
-  "shilon": [
+  "dekeren_f2": [
     {
       "type": "polygon",
       "latlngs": [
         [
           {
-            "lat": 966,
-            "lng": 1492
+            "lat": 1887.9751057680817,
+            "lng": 568.5138520739841
           },
           {
-            "lat": 874,
-            "lng": 1378
+            "lat": 1897.8746007046934,
+            "lng": 439.82041789803253
           },
           {
-            "lat": 890,
-            "lng": 1288
+            "lat": 2110.0066350606576,
+            "lng": 422.84985514955537
           },
           {
-            "lat": 1002,
-            "lng": 1280
+            "lat": 2214.6584386762665,
+            "lng": 540.2295808265222
           },
           {
-            "lat": 1064,
-            "lng": 1364
+            "lat": 2094.4502858745536,
+            "lng": 639.2245301926389
           },
           {
-            "lat": 1052,
-            "lng": 1502
+            "lat": 2011.011685694541,
+            "lng": 640.638743755012
           }
         ]
       ],
@@ -692,10 +757,192 @@
         "fill": true,
         "fillColor": "#ff3333",
         "fillOpacity": 0.35,
-        "clickable": true
+        "clickable": true,
+        "dashArray": null,
+        "maintainColor": false,
+        "smoothFactor": 1,
+        "noClip": false,
+        "lineCap": "round",
+        "lineJoin": "round",
+        "dashOffset": null,
+        "fillRule": "evenodd",
+        "interactive": true,
+        "bubblingMouseEvents": true,
+        "pane": "overlayPane",
+        "attribution": null
+      },
+      "meta": {
+        "name": "Grumnak Stonehide",
+        "timer": "Unknown"
+      }
+    }
+  ],
+  "shilon": [
+    {
+      "type": "polygon",
+      "latlngs": [
+        [
+          {
+            "lat": 992,
+            "lng": 1482
+          },
+          {
+            "lat": 818,
+            "lng": 1396
+          },
+          {
+            "lat": 832,
+            "lng": 1240
+          },
+          {
+            "lat": 1002,
+            "lng": 1280
+          }
+        ]
+      ],
+      "radius": null,
+      "options": {
+        "stroke": true,
+        "color": "#ff3333",
+        "weight": 2,
+        "opacity": 0.5,
+        "fill": true,
+        "fillColor": "#ff3333",
+        "fillOpacity": 0.35,
+        "clickable": true,
+        "dashArray": null,
+        "maintainColor": false,
+        "smoothFactor": 1,
+        "noClip": false,
+        "lineCap": "round",
+        "lineJoin": "round",
+        "dashOffset": null,
+        "fillRule": "evenodd",
+        "interactive": true,
+        "bubblingMouseEvents": true,
+        "pane": "overlayPane",
+        "attribution": null
       },
       "meta": {
         "name": "Goldtooth the Loan Shark",
+        "timer": "Unknown"
+      }
+    },
+    {
+      "type": "polygon",
+      "latlngs": [
+        [
+          {
+            "lat": 1248,
+            "lng": 1438
+          },
+          {
+            "lat": 1174,
+            "lng": 1348
+          },
+          {
+            "lat": 1090,
+            "lng": 1412
+          },
+          {
+            "lat": 1014,
+            "lng": 1484
+          },
+          {
+            "lat": 1018,
+            "lng": 1560
+          },
+          {
+            "lat": 1080,
+            "lng": 1588
+          },
+          {
+            "lat": 1150,
+            "lng": 1526
+          }
+        ]
+      ],
+      "radius": null,
+      "options": {
+        "stroke": true,
+        "color": "#ff3333",
+        "weight": 2,
+        "opacity": 0.5,
+        "fill": true,
+        "fillColor": "#ff3333",
+        "fillOpacity": 0.35,
+        "clickable": true,
+        "smoothFactor": 1,
+        "noClip": false,
+        "lineCap": "round",
+        "lineJoin": "round",
+        "dashArray": null,
+        "dashOffset": null,
+        "fillRule": "evenodd",
+        "interactive": true,
+        "bubblingMouseEvents": true,
+        "pane": "overlayPane",
+        "attribution": null
+      },
+      "meta": {
+        "name": "Mirebank the Marsh Ancient",
+        "timer": "Unknown"
+      }
+    },
+    {
+      "type": "polygon",
+      "latlngs": [
+        [
+          {
+            "lat": 1766,
+            "lng": 10
+          },
+          {
+            "lat": 1900,
+            "lng": 24
+          },
+          {
+            "lat": 1894,
+            "lng": 176
+          },
+          {
+            "lat": 1736,
+            "lng": 262
+          },
+          {
+            "lat": 1642,
+            "lng": 220
+          },
+          {
+            "lat": 1604,
+            "lng": 36
+          }
+        ]
+      ],
+      "radius": null,
+      "options": {
+        "stroke": true,
+        "color": "#ff3333",
+        "weight": 2,
+        "opacity": 0.5,
+        "fill": true,
+        "fillColor": "#ff3333",
+        "fillOpacity": 0.35,
+        "clickable": true,
+        "smoothFactor": 1,
+        "noClip": false,
+        "lineCap": "round",
+        "lineJoin": "round",
+        "dashArray": null,
+        "dashOffset": null,
+        "fillRule": "evenodd",
+        "interactive": true,
+        "bubblingMouseEvents": true,
+        "pane": "overlayPane",
+        "attribution": null
+      },
+      "meta": {
+        "name": "Thunderhide",
         "timer": "Unknown"
       }
     }

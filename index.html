@@ -3,62 +3,185 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laghaim World Map</title>
+    <title>Laghaim World Map Viewer</title>
     
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <style>
+        :root {
+            --bg-panel: rgba(18, 18, 22, 0.95);
+            --border-panel: rgba(255, 215, 0, 0.25);
+            --accent-gold: #d4af37;
+            --accent-hover: #2a2a34;
+            --accent-active: rgba(212, 175, 55, 0.15);
+            --text-main: #f0f0f5;
+            --text-dim: #9ba1b0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
         html, body, #map {
             width: 100%;
             height: 100%;
             margin: 0;
             padding: 0;
-            background: #111;
+            background: #0a0a0c;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, sans-serif;
+            overflow: hidden;
         }
-        .leaflet-tooltip.spawn-tooltip {
-            background-color: rgba(10, 10, 10, 0.9);
-            border: 1px solid #ff4444;
-            color: #fff;
-            padding: 6px 10px;
-            border-radius: 4px;
+
+        /* Sidebar Container */
+        #sidebar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 260px;
+            background: var(--bg-panel);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-right: 1px solid var(--border-panel);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 6px 0 24px rgba(0, 0, 0, 0.6);
+        }
+
+        #sidebar.collapsed {
+            transform: translateX(-100%);
+        }
+
+        /* Sidebar Header */
+        .sidebar-header {
+            padding: 20px 16px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .sidebar-header h1 {
+            margin: 0;
+            font-size: 16px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--accent-gold);
+            font-weight: 700;
+        }
+
+        /* Map Zone List */
+        .zone-list {
+            list-style: none;
+            margin: 0;
+            padding: 12px 10px;
+            overflow-y: auto;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .zone-btn {
+            width: 100%;
+            background: transparent;
+            border: 1px solid transparent;
+            color: var(--text-main);
+            padding: 10px 14px;
+            border-radius: 6px;
             font-size: 13px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            text-align: left;
+            transition: all 0.15s ease-in-out;
         }
-        #map-selector-container {
+
+        .zone-btn:hover {
+            background: var(--accent-hover);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .zone-btn.active {
+            background: var(--accent-active);
+            border-color: var(--accent-gold);
+            color: #fff;
+            box-shadow: 0 0 12px rgba(212, 175, 55, 0.15);
+        }
+
+        .badge {
+            font-size: 11px;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 2px 7px;
+            border-radius: 10px;
+            color: var(--text-dim);
+            font-weight: 600;
+        }
+
+        .zone-btn.active .badge {
+            border-color: var(--accent-gold);
+            color: var(--accent-gold);
+        }
+
+        /* Floating Sidebar Toggle Button */
+        #sidebar-toggle {
             position: absolute;
             top: 15px;
-            right: 15px;
-            z-index: 1000;
-            background: rgba(20, 20, 20, 0.9);
+            left: 275px;
+            z-index: 1001;
+            background: var(--bg-panel);
+            border: 1px solid var(--border-panel);
+            color: var(--accent-gold);
+            width: 36px;
+            height: 36px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            transition: left 0.25s cubic-bezier(0.16, 1, 0.3, 1), background 0.15s;
+        }
+
+        #sidebar-toggle:hover {
+            background: #2a2a34;
+        }
+
+        #sidebar.collapsed ~ #sidebar-toggle {
+            left: 15px;
+        }
+
+        /* Tooltip Polish */
+        .leaflet-tooltip.spawn-tooltip {
+            background: rgba(14, 14, 18, 0.95);
+            border: 1px solid var(--accent-gold);
+            color: var(--text-main);
             padding: 8px 12px;
             border-radius: 6px;
-            border: 1px solid #444;
-            font-family: sans-serif;
-        }
-        #map-select {
-            background: #2a2a2a;
-            color: #fff;
-            border: 1px solid #555;
-            padding: 6px 10px;
-            border-radius: 4px;
-            font-size: 14px;
-            cursor: pointer;
+            font-size: 12px;
+            line-height: 1.4;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
         }
     </style>
 </head>
 <body>
 
-    <div id="map"></div>
+    <aside id="sidebar">
+        <div class="sidebar-header">
+            <h1>Laghaim Maps</h1>
+        </div>
+        <ul class="zone-list" id="zone-list">
+            <!-- Buttons dynamically populated -->
+        </ul>
+    </aside>
 
-    <div id="map-selector-container">
-        <label for="map-select" style="color: #bbb; font-size: 12px; display: block; margin-bottom: 4px;">Zone Map:</label>
-        <select id="map-select" onchange="switchMap(this.value)">
-            <option value="laglamia">Laglamia</option>
-            <option value="dekardi">Dekardi</option>
-            <option value="dekadun_f3">Dekadun F3</option>
-            <option value="dekadun_f4">Dekadun F4</option>
-            <option value="dekeren_f2">Dekeren F2</option>
-            <option value="shilon">Shilon</option>
-        </select>
-    </div>
+    <button id="sidebar-toggle" title="Toggle Sidebar" onclick="toggleSidebar()">☰</button>
+
+    <div id="map"></div>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
@@ -77,12 +200,35 @@
 
         const map = L.map('map', {
             crs: L.CRS.Simple,
-            minZoom: -2,
+            minZoom: -4,
             maxZoom: 3,
-            zoomSnap: 0.5
+            zoomSnap: 0.25,
+            zoomDelta: 0.5,
+            attributionControl: false
         });
 
         const spawnLayer = L.layerGroup().addTo(map);
+
+        function renderSidebar() {
+            const list = document.getElementById('zone-list');
+            list.innerHTML = '';
+
+            Object.keys(MAP_CONFIGS).forEach(key => {
+                const config = MAP_CONFIGS[key];
+                const count = (allSpawnsData[key] || []).length;
+
+                const li = document.createElement('li');
+                const btn = document.createElement('button');
+                btn.className = `zone-btn ${key === currentMapId ? 'active' : ''}`;
+                btn.onclick = () => switchMap(key);
+                btn.innerHTML = `
+                    <span>${config.name}</span>
+                    <span class="badge" title="${count} pinned locations">${count}</span>
+                `;
+                li.appendChild(btn);
+                list.appendChild(li);
+            });
+        }
 
         function switchMap(mapId) {
             currentMapId = mapId;
@@ -96,15 +242,17 @@
 
             const bounds = [[0, 0], [config.height, config.width]];
             currentOverlay = L.imageOverlay(config.image, bounds).addTo(map);
-            map.fitBounds(bounds);
-            map.setView([config.height / 2, config.width / 2], 0);
+
+            // Fit the full map image cleanly into the visible window with padding
+            map.fitBounds(bounds, { padding: [30, 30] });
 
             renderSpawnsForCurrentMap();
+            renderSidebar();
         }
 
         function renderSpawnsForCurrentMap() {
             const spawns = allSpawnsData[currentMapId] || [];
-            
+
             spawns.forEach(item => {
                 let layer;
                 if (item.type === 'polygon') layer = L.polygon(item.latlngs, item.options);
@@ -114,7 +262,7 @@
 
                 if (layer && item.meta) {
                     const borderColor = (item.options && item.options.color) ? item.options.color : '#ff4444';
-                    layer.bindTooltip(`<b>${item.meta.name}</b><br>Respawn: ${item.meta.timer}`, {
+                    layer.bindTooltip(`<strong>${item.meta.name}</strong><br><span style="color: #bbb;">Respawn:</span> ${item.meta.timer}`, {
                         direction: 'top',
                         className: 'spawn-tooltip'
                     });
@@ -128,6 +276,16 @@
             });
         }
 
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('collapsed');
+            
+            // Allow CSS transition to finish before recalculating leaflet sizing
+            setTimeout(() => {
+                map.invalidateSize();
+            }, 300);
+        }
+
         fetch('spawns.json')
             .then(res => res.json())
             .then(data => {
@@ -135,7 +293,7 @@
                 switchMap(currentMapId);
             })
             .catch(err => {
-                console.warn("No spawns.json found or failed to parse. Initializing blank maps.", err);
+                console.warn("Could not load spawns.json; initializing default map.", err);
                 switchMap(currentMapId);
             });
     </script>
