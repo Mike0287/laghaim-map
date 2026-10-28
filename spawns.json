@@ -775,6 +775,128 @@
         "name": "Grumnak Stonehide",
         "timer": "Unknown"
       }
+    },
+    {
+      "type": "polygon",
+      "latlngs": [
+        [
+          {
+            "lat": 2773.2727958136393,
+            "lng": 992.7779207859127
+          },
+          {
+            "lat": 2760.5448737522815,
+            "lng": 1267.1353518862932
+          },
+          {
+            "lat": 2668.6209921980303,
+            "lng": 1264.306924761547
+          },
+          {
+            "lat": 2569.6260428319133,
+            "lng": 1121.4713549618643
+          },
+          {
+            "lat": 2609.2240225783603,
+            "lng": 995.6063479106589
+          }
+        ]
+      ],
+      "radius": null,
+      "options": {
+        "stroke": true,
+        "color": "#ff3333",
+        "weight": 2,
+        "opacity": 0.5,
+        "fill": true,
+        "fillColor": "#ff3333",
+        "fillOpacity": 0.35,
+        "clickable": true
+      },
+      "meta": {
+        "name": "Deadwood the Hollow",
+        "timer": "Unknown"
+      }
+    },
+    {
+      "type": "polygon",
+      "latlngs": [
+        [
+          {
+            "lat": 2687.0057685088805,
+            "lng": 110.30865786510141
+          },
+          {
+            "lat": 2846.8119010570404,
+            "lng": 124.45079348883236
+          },
+          {
+            "lat": 2849.640328181786,
+            "lng": 312.541197284454
+          },
+          {
+            "lat": 2660.1357108237917,
+            "lng": 292.74220741123065
+          }
+        ]
+      ],
+      "radius": null,
+      "options": {
+        "stroke": true,
+        "color": "#ff3333",
+        "weight": 2,
+        "opacity": 0.5,
+        "fill": true,
+        "fillColor": "#ff3333",
+        "fillOpacity": 0.35,
+        "clickable": true
+      },
+      "meta": {
+        "name": "Bonechewer",
+        "timer": "Unknown"
+      }
+    },
+    {
+      "type": "polygon",
+      "latlngs": [
+        [
+          {
+            "lat": 2186.374167428805,
+            "lng": 622.2539674441617
+          },
+          {
+            "lat": 2363.1508627254416,
+            "lng": 526.0874452027913
+          },
+          {
+            "lat": 2453.66053071732,
+            "lng": 659.0235200658623
+          },
+          {
+            "lat": 2364.565076287815,
+            "lng": 796.2022356160525
+          },
+          {
+            "lat": 2230.214787862371,
+            "lng": 763.6753236814712
+          }
+        ]
+      ],
+      "radius": null,
+      "options": {
+        "stroke": true,
+        "color": "#ff3333",
+        "weight": 2,
+        "opacity": 0.5,
+        "fill": true,
+        "fillColor": "#ff3333",
+        "fillOpacity": 0.35,
+        "clickable": true
+      },
+      "meta": {
+        "name": "Dustweaver",
+        "timer": "Unknown"
+      }
     }
   ],
   "shilon": [
