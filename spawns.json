@@ -1,189 +1,26 @@
 {
-  "0": {
-    "type": "polygon",
-    "latlngs": [
-      [
-        {
-          "lat": 181,
-          "lng": 528
-        },
-        {
-          "lat": 205,
-          "lng": 690
-        },
-        {
-          "lat": 334,
-          "lng": 653
-        },
-        {
-          "lat": 313,
-          "lng": 503
-        }
-      ]
-    ],
-    "radius": null,
-    "options": {
-      "stroke": true,
-      "color": "#ff3333",
-      "weight": 2,
-      "opacity": 0.5,
-      "fill": true,
-      "fillColor": "#ff0000",
-      "fillOpacity": 0.35,
-      "clickable": true,
-      "dashArray": null,
-      "maintainColor": false,
-      "smoothFactor": 1,
-      "noClip": false,
-      "lineCap": "round",
-      "lineJoin": "round",
-      "dashOffset": null,
-      "fillRule": "evenodd",
-      "interactive": true,
-      "bubblingMouseEvents": true,
-      "pane": "overlayPane",
-      "attribution": null
-    },
-    "meta": {
-      "name": "Waddles the Castaway",
-      "timer": "Unknown"
-    }
-  },
-  "1": {
-    "type": "polygon",
-    "latlngs": [
-      [
-        {
-          "lat": 186,
-          "lng": 1114
-        },
-        {
-          "lat": 302,
-          "lng": 1063
-        },
-        {
-          "lat": 409,
-          "lng": 1109
-        },
-        {
-          "lat": 468,
-          "lng": 1191
-        },
-        {
-          "lat": 438,
-          "lng": 1342
-        },
-        {
-          "lat": 235,
-          "lng": 1315
-        },
-        {
-          "lat": 150,
-          "lng": 1227
-        }
-      ]
-    ],
-    "radius": null,
-    "options": {
-      "stroke": true,
-      "color": "#ff3333",
-      "weight": 2,
-      "opacity": 0.5,
-      "fill": true,
-      "fillColor": "#ff0000",
-      "fillOpacity": 0.35,
-      "clickable": true
-    },
-    "meta": {
-      "name": "Old Snapjaw",
-      "timer": "Unknown"
-    }
-  },
-  "2": {
-    "type": "polygon",
-    "latlngs": [
-      [
-        {
-          "lat": 500.5,
-          "lng": 1034
-        },
-        {
-          "lat": 431.5,
-          "lng": 1049
-        },
-        {
-          "lat": 378,
-          "lng": 888.5
-        },
-        {
-          "lat": 436.5,
-          "lng": 805.5
-        },
-        {
-          "lat": 495.5,
-          "lng": 919.5
-        }
-      ]
-    ],
-    "radius": null,
-    "options": {
-      "stroke": true,
-      "color": "#ff3333",
-      "weight": 2,
-      "opacity": 0.5,
-      "fill": true,
-      "fillColor": "#ff0000",
-      "fillOpacity": 0.35,
-      "clickable": true
-    },
-    "meta": {
-      "name": "Nibbles, Rabbit Gang Scout",
-      "timer": "Unknown"
-    }
-  },
   "laglamia": [
     {
       "type": "polygon",
       "latlngs": [
         [
-          {
-            "lat": 170,
-            "lng": 1110
-          },
-          {
-            "lat": 192,
-            "lng": 1265
-          },
-          {
-            "lat": 346,
-            "lng": 1312
-          },
-          {
-            "lat": 530,
-            "lng": 1351
-          },
-          {
-            "lat": 574,
-            "lng": 1242
-          },
-          {
-            "lat": 517,
-            "lng": 1128
-          },
-          {
-            "lat": 357,
-            "lng": 1107
-          }
+          { "lat": 170, "lng": 1110 },
+          { "lat": 192, "lng": 1265 },
+          { "lat": 346, "lng": 1312 },
+          { "lat": 530, "lng": 1351 },
+          { "lat": 574, "lng": 1242 },
+          { "lat": 517, "lng": 1128 },
+          { "lat": 357, "lng": 1107 }
         ]
       ],
       "radius": null,
       "options": {
         "stroke": true,
-        "color": "#960a87",
+        "color": "#ff3333",
         "weight": 2,
         "opacity": 0.5,
         "fill": true,
-        "fillColor": "#960a87",
+        "fillColor": "#ff3333",
         "fillOpacity": 0.35,
         "clickable": true,
         "dashArray": null,
@@ -200,48 +37,29 @@
         "attribution": null
       },
       "meta": {
-        "name": "Old Snapjaw",
-        "timer": "Unknown"
+        "name": "Old Snapjaw"
       }
     },
     {
       "type": "polygon",
       "latlngs": [
         [
-          {
-            "lat": 185,
-            "lng": 535
-          },
-          {
-            "lat": 206,
-            "lng": 694
-          },
-          {
-            "lat": 275,
-            "lng": 726
-          },
-          {
-            "lat": 334,
-            "lng": 675
-          },
-          {
-            "lat": 320,
-            "lng": 569
-          },
-          {
-            "lat": 243,
-            "lng": 513
-          }
+          { "lat": 185, "lng": 535 },
+          { "lat": 206, "lng": 694 },
+          { "lat": 275, "lng": 726 },
+          { "lat": 334, "lng": 675 },
+          { "lat": 320, "lng": 569 },
+          { "lat": 243, "lng": 513 }
         ]
       ],
       "radius": null,
       "options": {
         "stroke": true,
-        "color": "#960a87",
+        "color": "#a855f7",
         "weight": 2,
         "opacity": 0.5,
         "fill": true,
-        "fillColor": "#960a87",
+        "fillColor": "#a855f7",
         "fillOpacity": 0.35,
         "clickable": true,
         "smoothFactor": 1,
@@ -254,55 +72,34 @@
         "interactive": true,
         "bubblingMouseEvents": true,
         "pane": "overlayPane",
-        "attribution": null
+        "attribution": null,
+        "maintainColor": false
       },
       "meta": {
-        "name": "Waddles the Castaway",
-        "timer": "Unknown"
+        "name": "Waddles the Castaway"
       }
     },
     {
       "type": "polygon",
       "latlngs": [
         [
-          {
-            "lat": 591,
-            "lng": 1021
-          },
-          {
-            "lat": 553,
-            "lng": 884
-          },
-          {
-            "lat": 423,
-            "lng": 873
-          },
-          {
-            "lat": 371,
-            "lng": 894
-          },
-          {
-            "lat": 378,
-            "lng": 964
-          },
-          {
-            "lat": 403,
-            "lng": 1054
-          },
-          {
-            "lat": 497,
-            "lng": 1056
-          }
+          { "lat": 591, "lng": 1021 },
+          { "lat": 553, "lng": 884 },
+          { "lat": 423, "lng": 873 },
+          { "lat": 371, "lng": 894 },
+          { "lat": 378, "lng": 964 },
+          { "lat": 403, "lng": 1054 },
+          { "lat": 497, "lng": 1056 }
         ]
       ],
       "radius": null,
       "options": {
         "stroke": true,
-        "color": "#960a87",
+        "color": "#a855f7",
         "weight": 2,
         "opacity": 0.5,
         "fill": true,
-        "fillColor": "#960a87",
+        "fillColor": "#a855f7",
         "fillOpacity": 0.35,
         "clickable": true,
         "smoothFactor": 1,
@@ -315,11 +112,11 @@
         "interactive": true,
         "bubblingMouseEvents": true,
         "pane": "overlayPane",
-        "attribution": null
+        "attribution": null,
+        "maintainColor": false
       },
       "meta": {
-        "name": "Nibbles, Rabbit Gang Scout",
-        "timer": "Unknown"
+        "name": "Nibbles, Rabbit Gang Scout"
       }
     }
   ],
@@ -328,36 +125,21 @@
       "type": "polygon",
       "latlngs": [
         [
-          {
-            "lat": 1347,
-            "lng": 576
-          },
-          {
-            "lat": 1237,
-            "lng": 465
-          },
-          {
-            "lat": 1219,
-            "lng": 588
-          },
-          {
-            "lat": 1288,
-            "lng": 692
-          },
-          {
-            "lat": 1357,
-            "lng": 681
-          }
+          { "lat": 1347, "lng": 576 },
+          { "lat": 1237, "lng": 465 },
+          { "lat": 1219, "lng": 588 },
+          { "lat": 1288, "lng": 692 },
+          { "lat": 1357, "lng": 681 }
         ]
       ],
       "radius": null,
       "options": {
         "stroke": true,
-        "color": "#ff3333",
+        "color": "#a855f7",
         "weight": 2,
         "opacity": 0.5,
         "fill": true,
-        "fillColor": "#ff3333",
+        "fillColor": "#a855f7",
         "fillOpacity": 0.35,
         "clickable": true,
         "smoothFactor": 1,
@@ -373,48 +155,29 @@
         "attribution": null
       },
       "meta": {
-        "name": "Grumpjaw",
-        "timer": "Unknown"
+        "name": "Grumpjaw"
       }
     },
     {
       "type": "polygon",
       "latlngs": [
         [
-          {
-            "lat": 1175,
-            "lng": 552
-          },
-          {
-            "lat": 1173,
-            "lng": 399
-          },
-          {
-            "lat": 1028,
-            "lng": 353
-          },
-          {
-            "lat": 946,
-            "lng": 405
-          },
-          {
-            "lat": 966,
-            "lng": 549
-          },
-          {
-            "lat": 1075,
-            "lng": 585
-          }
+          { "lat": 1175, "lng": 552 },
+          { "lat": 1173, "lng": 399 },
+          { "lat": 1028, "lng": 353 },
+          { "lat": 946, "lng": 405 },
+          { "lat": 966, "lng": 549 },
+          { "lat": 1075, "lng": 585 }
         ]
       ],
       "radius": null,
       "options": {
         "stroke": true,
-        "color": "#ff3333",
+        "color": "#a855f7",
         "weight": 2,
         "opacity": 0.5,
         "fill": true,
-        "fillColor": "#ff3333",
+        "fillColor": "#a855f7",
         "fillOpacity": 0.35,
         "clickable": true,
         "smoothFactor": 1,
@@ -430,46 +193,21 @@
         "attribution": null
       },
       "meta": {
-        "name": "Knuckles the Enforcer",
-        "timer": "Unknown"
+        "name": "Knuckles the Enforcer"
       }
     },
     {
       "type": "polygon",
       "latlngs": [
         [
-          {
-            "lat": 1200,
-            "lng": 298
-          },
-          {
-            "lat": 1252,
-            "lng": 225
-          },
-          {
-            "lat": 1341,
-            "lng": 296
-          },
-          {
-            "lat": 1402,
-            "lng": 385
-          },
-          {
-            "lat": 1373,
-            "lng": 471
-          },
-          {
-            "lat": 1312,
-            "lng": 487
-          },
-          {
-            "lat": 1272,
-            "lng": 463
-          },
-          {
-            "lat": 1272,
-            "lng": 369
-          }
+          { "lat": 1200, "lng": 298 },
+          { "lat": 1252, "lng": 225 },
+          { "lat": 1341, "lng": 296 },
+          { "lat": 1402, "lng": 385 },
+          { "lat": 1373, "lng": 471 },
+          { "lat": 1312, "lng": 487 },
+          { "lat": 1272, "lng": 463 },
+          { "lat": 1272, "lng": 369 }
         ]
       ],
       "radius": null,
@@ -495,44 +233,335 @@
         "attribution": null
       },
       "meta": {
-        "name": "Boss Whiskers (Kagol)",
-        "timer": "Unknown"
+        "name": "Boss Whiskers (Kagol)"
       }
     }
   ],
-  "dekadun_f3": [
+  "dekadun": [
     {
       "type": "polygon",
       "latlngs": [
         [
-          {
-            "lat": 724,
-            "lng": 44
-          },
-          {
-            "lat": 42,
-            "lng": 56
-          },
-          {
-            "lat": 36,
-            "lng": 160
-          },
-          {
-            "lat": 260,
-            "lng": 208
-          },
-          {
-            "lat": 404,
-            "lng": 344
-          },
-          {
-            "lat": 602,
-            "lng": 496
-          },
-          {
-            "lat": 728,
-            "lng": 490
-          }
+          { "lat": 19.79898987322333, "lng": 32.526911934581186 },
+          { "lat": 493.5605332682101, "lng": 29.698484809834994 },
+          { "lat": 500.6316010800756, "lng": 302.64170234784234 },
+          { "lat": 319.61226509631945, "lng": 304.0559159102154 },
+          { "lat": 319.61226509631945, "lng": 178.19090885900997 },
+          { "lat": 15.556349186104045, "lng": 173.94826817189067 }
+        ]
+      ],
+      "radius": null,
+      "options": {
+        "stroke": true,
+        "color": "#a855f7",
+        "weight": 2,
+        "opacity": 0.5,
+        "fill": true,
+        "fillColor": "#a855f7",
+        "fillOpacity": 0.35,
+        "clickable": true
+      },
+      "meta": {
+        "name": "Thornling"
+      }
+    },
+    {
+      "type": "polygon",
+      "latlngs": [
+        [
+          { "lat": 268.70057685088807, "lng": 953.179941039466 },
+          { "lat": 285.6711395993652, "lng": 849.94235098623 },
+          { "lat": 397.3940110268397, "lng": 848.528137423857 },
+          { "lat": 397.3940110268397, "lng": 516.1879502661797 },
+          { "lat": 586.8986283848344, "lng": 510.5310960166873 },
+          { "lat": 574.1707063234766, "lng": 620.8397538817887 },
+          { "lat": 470.93311627024065, "lng": 620.8397538817887 },
+          { "lat": 470.93311627024065, "lng": 834.386001800126 },
+          { "lat": 465.2762620207482, "lng": 926.3098833543772 }
+        ]
+      ],
+      "radius": null,
+      "options": {
+        "stroke": true,
+        "color": "#a855f7",
+        "weight": 2,
+        "opacity": 0.5,
+        "fill": true,
+        "fillColor": "#a855f7",
+        "fillOpacity": 0.35,
+        "clickable": true
+      },
+      "meta": {
+        "name": "Pebblefist"
+      }
+    },
+    {
+      "type": "polygon",
+      "latlngs": [
+        [
+          { "lat": 1329.3607486307092, "lng": 2242.9427099237287 },
+          { "lat": 1245.9221484506966, "lng": 2242.9427099237287 },
+          { "lat": 1248.7505755754428, "lng": 2463.5600256539315 },
+          { "lat": 1329.3607486307092, "lng": 2462.145812091558 }
+        ]
+      ],
+      "radius": null,
+      "options": {
+        "stroke": true,
+        "color": "#a855f7",
+        "weight": 2,
+        "opacity": 0.5,
+        "fill": true,
+        "fillColor": "#a855f7",
+        "fillOpacity": 0.35,
+        "clickable": true
+      },
+      "meta": {
+        "name": "Grubnash the Orchard Ogre"
+      }
+    },
+    {
+      "type": "polygon",
+      "latlngs": [
+        [
+          { "lat": 574.1707063234766, "lng": 1507.5516574897192 },
+          { "lat": 569.9280656363572, "lng": 1634.8308781032977 },
+          { "lat": 345.0681092190352, "lng": 1637.6593052280439 },
+          { "lat": 328.09754647055803, "lng": 1511.7942981768385 }
+        ]
+      ],
+      "radius": null,
+      "options": {
+        "stroke": true,
+        "color": "#a855f7",
+        "weight": 2,
+        "opacity": 0.5,
+        "fill": true,
+        "fillColor": "#a855f7",
+        "fillOpacity": 0.35,
+        "clickable": true
+      },
+      "meta": {
+        "name": "Grubnash the Orchard Ogre"
+      }
+    },
+    {
+      "type": "polygon",
+      "latlngs": [
+        [
+          { "lat": 567.099638511611, "lng": 2008.1832585697948 },
+          { "lat": 565.6854249492379, "lng": 2091.6218587498074 },
+          { "lat": 799.0306627407987, "lng": 2070.408655314211 },
+          { "lat": 794.7880220536794, "lng": 1981.313200884706 }
+        ]
+      ],
+      "radius": null,
+      "options": {
+        "stroke": true,
+        "color": "#ff3333",
+        "weight": 2,
+        "opacity": 0.5,
+        "fill": true,
+        "fillColor": "#ff3333",
+        "fillOpacity": 0.35,
+        "clickable": true
+      },
+      "meta": {
+        "name": "Elderbark the Ancient"
+      }
+    },
+    {
+      "type": "polygon",
+      "latlngs": [
+        [
+          { "lat": 724, "lng": 44 },
+          { "lat": 42, "lng": 56 },
+          { "lat": 36, "lng": 160 },
+          { "lat": 260, "lng": 208 },
+          { "lat": 404, "lng": 344 },
+          { "lat": 602, "lng": 496 },
+          { "lat": 728, "lng": 490 }
+        ]
+      ],
+      "radius": null,
+      "options": {
+        "stroke": true,
+        "color": "#a855f7",
+        "weight": 2,
+        "opacity": 0.5,
+        "fill": true,
+        "fillColor": "#a855f7",
+        "fillOpacity": 0.35,
+        "clickable": true,
+        "dashArray": null,
+        "maintainColor": false,
+        "smoothFactor": 1,
+        "noClip": false,
+        "lineCap": "round",
+        "lineJoin": "round",
+        "dashOffset": null,
+        "fillRule": "evenodd",
+        "interactive": true,
+        "bubblingMouseEvents": true,
+        "pane": "overlayPane",
+        "attribution": null
+      },
+      "meta": {
+        "name": "Thornling"
+      }
+    },
+    {
+      "type": "polygon",
+      "latlngs": [
+        [
+          { "lat": 696, "lng": 936 },
+          { "lat": 420, "lng": 960 },
+          { "lat": 420, "lng": 1226 },
+          { "lat": 406, "lng": 1460 },
+          { "lat": 728, "lng": 1564 }
+        ]
+      ],
+      "radius": null,
+      "options": {
+        "stroke": true,
+        "color": "#a855f7",
+        "weight": 2,
+        "opacity": 0.5,
+        "fill": true,
+        "fillColor": "#a855f7",
+        "fillOpacity": 0.35,
+        "clickable": true,
+        "smoothFactor": 1,
+        "noClip": false,
+        "lineCap": "round",
+        "lineJoin": "round",
+        "dashArray": null,
+        "dashOffset": null,
+        "fillRule": "evenodd",
+        "interactive": true,
+        "bubblingMouseEvents": true,
+        "pane": "overlayPane",
+        "attribution": null
+      },
+      "meta": {
+        "name": "Pebblefist"
+      }
+    },
+    {
+      "type": "polygon",
+      "latlngs": [
+        [
+          { "lat": 1982, "lng": 1162 },
+          { "lat": 1738, "lng": 1170 },
+          { "lat": 1730, "lng": 1570 },
+          { "lat": 1800, "lng": 1572 },
+          { "lat": 1802, "lng": 1648 },
+          { "lat": 1968, "lng": 1648 }
+        ]
+      ],
+      "radius": null,
+      "options": {
+        "stroke": true,
+        "color": "#a855f7",
+        "weight": 2,
+        "opacity": 0.5,
+        "fill": true,
+        "fillColor": "#a855f7",
+        "fillOpacity": 0.35,
+        "clickable": true,
+        "smoothFactor": 1,
+        "noClip": false,
+        "lineCap": "round",
+        "lineJoin": "round",
+        "dashArray": null,
+        "dashOffset": null,
+        "fillRule": "evenodd",
+        "interactive": true,
+        "bubblingMouseEvents": true,
+        "pane": "overlayPane",
+        "attribution": null,
+        "maintainColor": false
+      },
+      "meta": {
+        "name": "Grubnash the Orchard Ogre"
+      }
+    },
+    {
+      "type": "polygon",
+      "latlngs": [
+        [
+          { "lat": 816, "lng": 944 },
+          { "lat": 1098, "lng": 932 },
+          { "lat": 1102, "lng": 640 },
+          { "lat": 814, "lng": 636 }
+        ]
+      ],
+      "radius": null,
+      "options": {
+        "stroke": true,
+        "color": "#ff3333",
+        "weight": 2,
+        "opacity": 0.5,
+        "fill": true,
+        "fillColor": "#ff3333",
+        "fillOpacity": 0.35,
+        "clickable": true,
+        "smoothFactor": 1,
+        "noClip": false,
+        "lineCap": "round",
+        "lineJoin": "round",
+        "dashArray": null,
+        "dashOffset": null,
+        "fillRule": "evenodd",
+        "interactive": true,
+        "bubblingMouseEvents": true,
+        "pane": "overlayPane",
+        "attribution": null,
+        "maintainColor": false
+      },
+      "meta": {
+        "name": "Elderbark the Ancient"
+      }
+    },
+    {
+      "type": "polygon",
+      "latlngs": [
+        [
+          { "lat": 850, "lng": 62 },
+          { "lat": 844, "lng": 248 },
+          { "lat": 492, "lng": 244 },
+          { "lat": 492, "lng": 42 }
+        ]
+      ],
+      "radius": null,
+      "options": {
+        "stroke": true,
+        "color": "#a855f7",
+        "weight": 2,
+        "opacity": 0.5,
+        "fill": true,
+        "fillColor": "#a855f7",
+        "fillOpacity": 0.35,
+        "clickable": true
+      },
+      "meta": {
+        "name": "Grubnash the Orchard Ogre"
+      }
+    }
+  ],
+  "dekeren": [
+    {
+      "type": "polygon",
+      "latlngs": [
+        [
+          { "lat": 2075.3323528461674, "lng": 632.3541042707934 },
+          { "lat": 2236.784464574881, "lng": 529.7647416098401 },
+          { "lat": 2082.059524168197, "lng": 526.4011559488254 },
+          { "lat": 2083.741316998705, "lng": 327.94960194894867 },
+          { "lat": 1828.1088067615756, "lng": 327.94960194894867 },
+          { "lat": 1829.7905995920828, "lng": 543.2190842538996 },
+          { "lat": 2009.7424324563779, "lng": 544.900877084407 },
+          { "lat": 2001.3334683038406, "lng": 630.672311440286 }
         ]
       ],
       "radius": null,
@@ -559,51 +588,36 @@
         "attribution": null
       },
       "meta": {
-        "name": "Thornling",
-        "timer": "Unknown"
+        "name": "Grumnack Stonehide"
       }
     },
     {
       "type": "polygon",
       "latlngs": [
         [
-          {
-            "lat": 696,
-            "lng": 936
-          },
-          {
-            "lat": 420,
-            "lng": 960
-          },
-          {
-            "lat": 420,
-            "lng": 1226
-          },
-          {
-            "lat": 406,
-            "lng": 1460
-          },
-          {
-            "lat": 728,
-            "lng": 1564
-          }
+          { "lat": 2248.557014388433, "lng": 541.5372914233922 },
+          { "lat": 2102.2410381342866, "lng": 647.4902397453602 },
+          { "lat": 2097.195659642764, "lng": 795.488008830014 },
+          { "lat": 2357.873548371416, "lng": 790.4426303384917 },
+          { "lat": 2367.96430535446, "lng": 536.4919129318699 }
         ]
       ],
       "radius": null,
       "options": {
         "stroke": true,
-        "color": "#ff3333",
+        "color": "#a855f7",
         "weight": 2,
         "opacity": 0.5,
         "fill": true,
-        "fillColor": "#ff3333",
+        "fillColor": "#a855f7",
         "fillOpacity": 0.35,
         "clickable": true,
+        "dashArray": null,
+        "maintainColor": false,
         "smoothFactor": 1,
         "noClip": false,
         "lineCap": "round",
         "lineJoin": "round",
-        "dashArray": null,
         "dashOffset": null,
         "fillRule": "evenodd",
         "interactive": true,
@@ -612,98 +626,35 @@
         "attribution": null
       },
       "meta": {
-        "name": "Pebblefist",
-        "timer": "Unknown"
-      }
-    }
-  ],
-  "dekadun_f4": [
-    {
-      "type": "polygon",
-      "latlngs": [
-        [
-          {
-            "lat": 1982,
-            "lng": 1162
-          },
-          {
-            "lat": 1760,
-            "lng": 1188
-          },
-          {
-            "lat": 1730,
-            "lng": 1480
-          },
-          {
-            "lat": 1968,
-            "lng": 1648
-          }
-        ]
-      ],
-      "radius": null,
-      "options": {
-        "stroke": true,
-        "color": "#ff3333",
-        "weight": 2,
-        "opacity": 0.5,
-        "fill": true,
-        "fillColor": "#ff3333",
-        "fillOpacity": 0.35,
-        "clickable": true,
-        "smoothFactor": 1,
-        "noClip": false,
-        "lineCap": "round",
-        "lineJoin": "round",
-        "dashArray": null,
-        "dashOffset": null,
-        "fillRule": "evenodd",
-        "interactive": true,
-        "bubblingMouseEvents": true,
-        "pane": "overlayPane",
-        "attribution": null
-      },
-      "meta": {
-        "name": "Grubnash the Orchard Ogre",
-        "timer": "Unknown"
+        "name": "Dustweaver"
       }
     },
     {
       "type": "polygon",
       "latlngs": [
         [
-          {
-            "lat": 860,
-            "lng": 940
-          },
-          {
-            "lat": 1176,
-            "lng": 910
-          },
-          {
-            "lat": 1102,
-            "lng": 640
-          },
-          {
-            "lat": 814,
-            "lng": 636
-          }
+          { "lat": 2875.8657401677037, "lng": 97.54398416943089 },
+          { "lat": 2695.913907303409, "lng": 104.2711554914606 },
+          { "lat": 2669.00522201529, "lng": 314.49525930488926 },
+          { "lat": 2874.1839473371965, "lng": 316.1770521353967 }
         ]
       ],
       "radius": null,
       "options": {
         "stroke": true,
-        "color": "#ff3333",
+        "color": "#a855f7",
         "weight": 2,
         "opacity": 0.5,
         "fill": true,
-        "fillColor": "#ff3333",
+        "fillColor": "#a855f7",
         "fillOpacity": 0.35,
         "clickable": true,
+        "dashArray": null,
+        "maintainColor": false,
         "smoothFactor": 1,
         "noClip": false,
         "lineCap": "round",
         "lineJoin": "round",
-        "dashArray": null,
         "dashOffset": null,
         "fillRule": "evenodd",
         "interactive": true,
@@ -712,40 +663,93 @@
         "attribution": null
       },
       "meta": {
-        "name": "Elderbark the Ancient",
-        "timer": "Unknown"
+        "name": "Bonechewer"
       }
-    }
-  ],
-  "dekeren_f2": [
+    },
     {
       "type": "polygon",
       "latlngs": [
         [
-          {
-            "lat": 1887.9751057680817,
-            "lng": 568.5138520739841
-          },
-          {
-            "lat": 1897.8746007046934,
-            "lng": 439.82041789803253
-          },
-          {
-            "lat": 2110.0066350606576,
-            "lng": 422.84985514955537
-          },
-          {
-            "lat": 2214.6584386762665,
-            "lng": 540.2295808265222
-          },
-          {
-            "lat": 2094.4502858745536,
-            "lng": 639.2245301926389
-          },
-          {
-            "lat": 2011.011685694541,
-            "lng": 640.638743755012
-          }
+          { "lat": 2754.776656371169, "lng": 916.5770926265488 },
+          { "lat": 2763.185620523706, "lng": 1093.165339829829 },
+          { "lat": 2537.8253812357107, "lng": 1094.8471326603365 },
+          { "lat": 2552.9615167102775, "lng": 919.9406782875637 }
+        ]
+      ],
+      "radius": null,
+      "options": {
+        "stroke": true,
+        "color": "#a855f7",
+        "weight": 2,
+        "opacity": 0.5,
+        "fill": true,
+        "fillColor": "#a855f7",
+        "fillOpacity": 0.35,
+        "clickable": true,
+        "dashArray": null,
+        "maintainColor": false,
+        "smoothFactor": 1,
+        "noClip": false,
+        "lineCap": "round",
+        "lineJoin": "round",
+        "dashOffset": null,
+        "fillRule": "evenodd",
+        "interactive": true,
+        "bubblingMouseEvents": true,
+        "pane": "overlayPane",
+        "attribution": null
+      },
+      "meta": {
+        "name": "Bonechewer"
+      }
+    },
+    {
+      "type": "polygon",
+      "latlngs": [
+        [
+          { "lat": 2763.185620523706, "lng": 1136.8919534230222 },
+          { "lat": 2539.507174066218, "lng": 1140.2555390840369 },
+          { "lat": 2534.4617955746958, "lng": 1298.3440651517353 },
+          { "lat": 2766.549206184721, "lng": 1296.6622723212279 }
+        ]
+      ],
+      "radius": null,
+      "options": {
+        "stroke": true,
+        "color": "#a855f7",
+        "weight": 2,
+        "opacity": 0.5,
+        "fill": true,
+        "fillColor": "#a855f7",
+        "fillOpacity": 0.35,
+        "clickable": true,
+        "dashArray": null,
+        "maintainColor": false,
+        "smoothFactor": 1,
+        "noClip": false,
+        "lineCap": "round",
+        "lineJoin": "round",
+        "dashOffset": null,
+        "fillRule": "evenodd",
+        "interactive": true,
+        "bubblingMouseEvents": true,
+        "pane": "overlayPane",
+        "attribution": null
+      },
+      "meta": {
+        "name": "Deadwood the Hollow"
+      }
+    },
+    {
+      "type": "polygon",
+      "latlngs": [
+        [
+          { "lat": 1887.9751057680817, "lng": 568.5138520739841 },
+          { "lat": 1897.8746007046934, "lng": 439.82041789803253 },
+          { "lat": 2110.0066350606576, "lng": 422.84985514955537 },
+          { "lat": 2214.6584386762665, "lng": 540.2295808265222 },
+          { "lat": 2094.4502858745536, "lng": 639.2245301926389 },
+          { "lat": 2011.011685694541, "lng": 640.638743755012 }
         ]
       ],
       "radius": null,
@@ -772,34 +776,92 @@
         "attribution": null
       },
       "meta": {
-        "name": "Grumnak Stonehide",
-        "timer": "Unknown"
+        "name": "Grumnak Stonehide"
       }
     },
     {
       "type": "polygon",
       "latlngs": [
         [
-          {
-            "lat": 2773.2727958136393,
-            "lng": 992.7779207859127
-          },
-          {
-            "lat": 2760.5448737522815,
-            "lng": 1267.1353518862932
-          },
-          {
-            "lat": 2668.6209921980303,
-            "lng": 1264.306924761547
-          },
-          {
-            "lat": 2569.6260428319133,
-            "lng": 1121.4713549618643
-          },
-          {
-            "lat": 2609.2240225783603,
-            "lng": 995.6063479106589
-          }
+          { "lat": 2758, "lng": 1110 },
+          { "lat": 2760.5448737522815, "lng": 1267.1353518862932 },
+          { "lat": 2560, "lng": 1266 },
+          { "lat": 2556, "lng": 1106 }
+        ]
+      ],
+      "radius": null,
+      "options": {
+        "stroke": true,
+        "color": "#a855f7",
+        "weight": 2,
+        "opacity": 0.5,
+        "fill": true,
+        "fillColor": "#a855f7",
+        "fillOpacity": 0.35,
+        "clickable": true,
+        "dashArray": null,
+        "maintainColor": false,
+        "smoothFactor": 1,
+        "noClip": false,
+        "lineCap": "round",
+        "lineJoin": "round",
+        "dashOffset": null,
+        "fillRule": "evenodd",
+        "interactive": true,
+        "bubblingMouseEvents": true,
+        "pane": "overlayPane",
+        "attribution": null
+      },
+      "meta": {
+        "name": "Deadwood the Hollow"
+      }
+    },
+    {
+      "type": "polygon",
+      "latlngs": [
+        [
+          { "lat": 2687.0057685088805, "lng": 110.30865786510141 },
+          { "lat": 2844, "lng": 110 },
+          { "lat": 2844, "lng": 300 },
+          { "lat": 2680, "lng": 304 }
+        ]
+      ],
+      "radius": null,
+      "options": {
+        "stroke": true,
+        "color": "#a855f7",
+        "weight": 2,
+        "opacity": 0.5,
+        "fill": true,
+        "fillColor": "#a855f7",
+        "fillOpacity": 0.35,
+        "clickable": true,
+        "dashArray": null,
+        "maintainColor": false,
+        "smoothFactor": 1,
+        "noClip": false,
+        "lineCap": "round",
+        "lineJoin": "round",
+        "dashOffset": null,
+        "fillRule": "evenodd",
+        "interactive": true,
+        "bubblingMouseEvents": true,
+        "pane": "overlayPane",
+        "attribution": null
+      },
+      "meta": {
+        "name": "Bonechewer"
+      }
+    },
+    {
+      "type": "polygon",
+      "latlngs": [
+        [
+          { "lat": 2186.374167428805, "lng": 622.2539674441617 },
+          { "lat": 2363.1508627254416, "lng": 526.0874452027913 },
+          { "lat": 2453.66053071732, "lng": 659.0235200658623 },
+          { "lat": 2364.565076287815, "lng": 796.2022356160525 },
+          { "lat": 2230.214787862371, "lng": 763.6753236814712 }
         ]
       ],
       "radius": null,
@@ -811,91 +873,47 @@
         "fill": true,
         "fillColor": "#ff3333",
         "fillOpacity": 0.35,
-        "clickable": true
+        "clickable": true,
+        "dashArray": null,
+        "maintainColor": false,
+        "smoothFactor": 1,
+        "noClip": false,
+        "lineCap": "round",
+        "lineJoin": "round",
+        "dashOffset": null,
+        "fillRule": "evenodd",
+        "interactive": true,
+        "bubblingMouseEvents": true,
+        "pane": "overlayPane",
+        "attribution": null
       },
       "meta": {
-        "name": "Deadwood the Hollow",
-        "timer": "Unknown"
+        "name": "Dustweaver"
       }
     },
     {
       "type": "polygon",
       "latlngs": [
         [
-          {
-            "lat": 2687.0057685088805,
-            "lng": 110.30865786510141
-          },
-          {
-            "lat": 2846.8119010570404,
-            "lng": 124.45079348883236
-          },
-          {
-            "lat": 2849.640328181786,
-            "lng": 312.541197284454
-          },
-          {
-            "lat": 2660.1357108237917,
-            "lng": 292.74220741123065
-          }
+          { "lat": 2776, "lng": 924 },
+          { "lat": 2766, "lng": 1090 },
+          { "lat": 2558, "lng": 1088 },
+          { "lat": 2568, "lng": 916 }
         ]
       ],
       "radius": null,
       "options": {
         "stroke": true,
-        "color": "#ff3333",
+        "color": "#a855f7",
         "weight": 2,
         "opacity": 0.5,
         "fill": true,
-        "fillColor": "#ff3333",
+        "fillColor": "#a855f7",
         "fillOpacity": 0.35,
         "clickable": true
       },
       "meta": {
-        "name": "Bonechewer",
-        "timer": "Unknown"
-      }
-    },
-    {
-      "type": "polygon",
-      "latlngs": [
-        [
-          {
-            "lat": 2186.374167428805,
-            "lng": 622.2539674441617
-          },
-          {
-            "lat": 2363.1508627254416,
-            "lng": 526.0874452027913
-          },
-          {
-            "lat": 2453.66053071732,
-            "lng": 659.0235200658623
-          },
-          {
-            "lat": 2364.565076287815,
-            "lng": 796.2022356160525
-          },
-          {
-            "lat": 2230.214787862371,
-            "lng": 763.6753236814712
-          }
-        ]
-      ],
-      "radius": null,
-      "options": {
-        "stroke": true,
-        "color": "#ff3333",
-        "weight": 2,
-        "opacity": 0.5,
-        "fill": true,
-        "fillColor": "#ff3333",
-        "fillOpacity": 0.35,
-        "clickable": true
-      },
-      "meta": {
-        "name": "Dustweaver",
-        "timer": "Unknown"
+        "name": "Bonechewer"
       }
     }
   ],
@@ -904,22 +922,10 @@
       "type": "polygon",
       "latlngs": [
         [
-          {
-            "lat": 992,
-            "lng": 1482
-          },
-          {
-            "lat": 818,
-            "lng": 1396
-          },
-          {
-            "lat": 832,
-            "lng": 1240
-          },
-          {
-            "lat": 1002,
-            "lng": 1280
-          }
+          { "lat": 992, "lng": 1482 },
+          { "lat": 818, "lng": 1396 },
+          { "lat": 832, "lng": 1240 },
+          { "lat": 1002, "lng": 1280 }
         ]
       ],
       "radius": null,
@@ -946,42 +952,20 @@
         "attribution": null
       },
       "meta": {
-        "name": "Goldtooth the Loan Shark",
-        "timer": "Unknown"
+        "name": "Goldtooth the Loan Shark"
       }
     },
     {
       "type": "polygon",
       "latlngs": [
         [
-          {
-            "lat": 1248,
-            "lng": 1438
-          },
-          {
-            "lat": 1174,
-            "lng": 1348
-          },
-          {
-            "lat": 1090,
-            "lng": 1412
-          },
-          {
-            "lat": 1014,
-            "lng": 1484
-          },
-          {
-            "lat": 1018,
-            "lng": 1560
-          },
-          {
-            "lat": 1080,
-            "lng": 1588
-          },
-          {
-            "lat": 1150,
-            "lng": 1526
-          }
+          { "lat": 1248, "lng": 1438 },
+          { "lat": 1174, "lng": 1348 },
+          { "<lat>": 1090, "lng": 1412 },
+          { "lat": 1014, "lng": 1484 },
+          { "lat": 1018, "lng": 1560 },
+          { "lat": 1080, "lng": 1588 },
+          { "lat": 1150, "lng": 1526 }
         ]
       ],
       "radius": null,
@@ -1007,38 +991,19 @@
         "attribution": null
       },
       "meta": {
-        "name": "Mirebank the Marsh Ancient",
-        "timer": "Unknown"
+        "name": "Mirebank the Marsh Ancient"
       }
     },
     {
       "type": "polygon",
       "latlngs": [
         [
-          {
-            "lat": 1766,
-            "lng": 10
-          },
-          {
-            "lat": 1900,
-            "lng": 24
-          },
-          {
-            "lat": 1894,
-            "lng": 176
-          },
-          {
-            "lat": 1736,
-            "lng": 262
-          },
-          {
-            "lat": 1642,
-            "lng": 220
-          },
-          {
-            "lat": 1604,
-            "lng": 36
-          }
+          { "lat": 1766, "lng": 10 },
+          { "lat": 1900, "lng": 24 },
+          { "lat": 1894, "lng": 176 },
+          { "lat": 1736, "lng": 262 },
+          { "lat": 1642, "lng": 220 },
+          { "lat": 1604, "lng": 36 }
         ]
       ],
       "radius": null,
@@ -1064,8 +1029,7 @@
         "attribution": null
       },
       "meta": {
-        "name": "Thunderhide",
-        "timer": "Unknown"
+        "name": "Thunderhide"
       }
     }
   ]

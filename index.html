@@ -3,18 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laghaim World Map Viewer</title>
+    <title>Laghaim World Map & Boss Tracker</title>
     
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <style>
         :root {
-            --bg-panel: rgba(18, 18, 22, 0.95);
-            --border-panel: rgba(255, 215, 0, 0.25);
+            --bg-panel: rgba(16, 17, 22, 0.96);
+            --border-panel: rgba(212, 175, 55, 0.25);
             --accent-gold: #d4af37;
-            --accent-hover: #2a2a34;
+            --accent-gold-glow: rgba(212, 175, 55, 0.35);
+            --accent-hover: #232530;
             --accent-active: rgba(212, 175, 55, 0.15);
             --text-main: #f0f0f5;
-            --text-dim: #9ba1b0;
+            --text-dim: #9aa0a6;
+            --badge-green: #34d399;
         }
 
         * {
@@ -26,27 +28,26 @@
             height: 100%;
             margin: 0;
             padding: 0;
-            background: #0a0a0c;
+            background: #090a0f;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             overflow: hidden;
         }
 
-        /* Sidebar Container */
         #sidebar {
             position: absolute;
             top: 0;
             left: 0;
             bottom: 0;
-            width: 290px;
+            width: 340px;
             background: var(--bg-panel);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
             border-right: 1px solid var(--border-panel);
             z-index: 1000;
             display: flex;
             flex-direction: column;
             transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-            box-shadow: 6px 0 24px rgba(0, 0, 0, 0.6);
+            box-shadow: 8px 0 28px rgba(0, 0, 0, 0.7);
         }
 
         #sidebar.collapsed {
@@ -54,11 +55,11 @@
         }
 
         .sidebar-header {
-            padding: 18px 16px;
+            padding: 16px 14px 12px 14px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.08);
             display: flex;
-            align-items: center;
-            justify-content: space-between;
+            flex-direction: column;
+            gap: 10px;
         }
 
         .sidebar-header h1 {
@@ -70,13 +71,48 @@
             font-weight: 700;
         }
 
-        /* Zone & Boss Accordion */
-        .zone-list {
+        .tab-nav {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 6px;
+            padding: 3px;
+            gap: 4px;
+        }
+
+        .tab-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-dim);
+            padding: 7px 10px;
+            font-size: 12px;
+            font-weight: 600;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .tab-btn.active {
+            background: var(--accent-hover);
+            color: var(--accent-gold);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+        }
+
+        .tab-content {
+            flex: 1;
+            overflow-y: auto;
+            display: none;
+            flex-direction: column;
+        }
+
+        .tab-content.active {
+            display: flex !important;
+        }
+
+        .zone-list, .tracker-sections-list {
             list-style: none;
             margin: 0;
             padding: 10px 8px;
-            overflow-y: auto;
-            flex: 1;
             display: flex;
             flex-direction: column;
             gap: 6px;
@@ -89,7 +125,6 @@
             overflow: hidden;
             border: 1px solid transparent;
             background: rgba(255, 255, 255, 0.02);
-            transition: border-color 0.2s;
         }
 
         .zone-group.active {
@@ -108,7 +143,6 @@
             font-weight: 600;
             cursor: pointer;
             text-align: left;
-            transition: background 0.15s;
         }
 
         .zone-header:hover {
@@ -120,7 +154,7 @@
             background: var(--accent-active);
         }
 
-        .zone-header .meta-wrap {
+        .meta-wrap {
             display: flex;
             align-items: center;
             gap: 8px;
@@ -136,11 +170,6 @@
             font-weight: 600;
         }
 
-        .zone-group.active .badge {
-            border-color: var(--accent-gold);
-            color: var(--accent-gold);
-        }
-
         .accordion-arrow {
             font-size: 10px;
             transition: transform 0.2s ease;
@@ -152,19 +181,18 @@
             color: var(--accent-gold);
         }
 
-        /* Boss List inside each map */
-        .boss-sublist {
+        .sublist-container {
             list-style: none;
             margin: 0;
             padding: 4px 6px 8px 6px;
             display: none;
             flex-direction: column;
-            gap: 3px;
-            background: rgba(0, 0, 0, 0.25);
+            gap: 4px;
+            background: rgba(0, 0, 0, 0.3);
             border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        .zone-group.expanded .boss-sublist {
+        .zone-group.expanded .sublist-container {
             display: flex;
         }
 
@@ -172,7 +200,7 @@
             background: transparent;
             border: 1px solid transparent;
             color: var(--text-dim);
-            padding: 6px 10px;
+            padding: 8px 12px;
             border-radius: 4px;
             font-size: 12px;
             display: flex;
@@ -186,31 +214,163 @@
         .boss-btn:hover {
             background: rgba(255, 255, 255, 0.06);
             color: #fff;
-            border-color: rgba(255, 255, 255, 0.1);
         }
 
         .boss-btn.highlighted {
-            background: rgba(212, 175, 55, 0.2);
+            background: rgba(212, 175, 55, 0.18);
             color: #fff;
             border-color: var(--accent-gold);
-            box-shadow: 0 0 10px rgba(212, 175, 55, 0.25);
+            box-shadow: 0 0 10px var(--accent-gold-glow);
         }
 
-        .boss-timer {
+        .sub-badge {
             font-size: 10px;
-            color: #7d8590;
-        }
-
-        .boss-btn:hover .boss-timer,
-        .boss-btn.highlighted .boss-timer {
+            background: rgba(212, 175, 55, 0.15);
             color: var(--accent-gold);
+            padding: 2px 8px;
+            margin-left: 12px;
+            border-radius: 4px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            white-space: nowrap;
         }
 
-        /* Sidebar Toggle */
+        .tracker-toolbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 12px;
+            background: rgba(0, 0, 0, 0.45);
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            margin: 10px 8px 2px 8px;
+        }
+
+        .tracker-toolbar span {
+            font-size: 11px;
+            color: var(--text-dim);
+        }
+
+        .btn-reset {
+            background: #b02a37;
+            border: 1px solid #dc3545;
+            color: #fff;
+            font-size: 11px;
+            padding: 4px 8px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .btn-reset:hover { background: #8f1f2b; }
+
+        .tracker-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 4px;
+            padding: 6px 10px;
+            gap: 8px;
+        }
+
+        .tracker-name-btn {
+            background: none;
+            border: none;
+            color: var(--text-main);
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            text-align: left;
+            padding: 0;
+            flex: 1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            transition: color 0.15s;
+        }
+
+        .tracker-name-btn:hover {
+            color: var(--accent-gold);
+            text-decoration: underline;
+        }
+
+        .tracker-controls {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+
+        .daily-toggle-btn {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: var(--text-dim);
+            font-size: 11px;
+            padding: 3px 6px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .daily-toggle-btn.checked {
+            background: rgba(212, 175, 55, 0.2);
+            border-color: var(--accent-gold);
+            color: var(--accent-gold);
+            font-weight: 600;
+        }
+
+        .lifetime-stepper {
+            display: flex;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            padding: 1px;
+            gap: 3px;
+        }
+
+        .lifetime-stepper button {
+            background: #252834;
+            border: none;
+            color: #fff;
+            width: 18px;
+            height: 18px;
+            border-radius: 2px;
+            font-size: 11px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lifetime-stepper button:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        .lifetime-counter {
+            font-size: 11px;
+            font-weight: bold;
+            color: var(--text-dim);
+            min-width: 32px;
+            text-align: center;
+        }
+
+        .lifetime-counter.tier-bronze {
+            color: #38bdf8;
+        }
+
+        .lifetime-counter.tier-gold {
+            color: var(--accent-gold);
+            text-shadow: 0 0 6px var(--accent-gold-glow);
+        }
+
         #sidebar-toggle {
             position: absolute;
             top: 15px;
-            left: 305px;
+            left: 355px;
             z-index: 1001;
             background: var(--bg-panel);
             border: 1px solid var(--border-panel);
@@ -226,46 +386,42 @@
             transition: left 0.25s cubic-bezier(0.16, 1, 0.3, 1), background 0.15s;
         }
 
-        #sidebar-toggle:hover {
-            background: #2a2a34;
-        }
-
         #sidebar.collapsed ~ #sidebar-toggle {
             left: 15px;
         }
 
-        /* Tooltip Polish */
+        #clear-filter-btn {
+            display: none;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            z-index: 1001;
+            background: rgba(18, 18, 22, 0.95);
+            border: 1px solid var(--accent-gold);
+            color: var(--accent-gold);
+            padding: 8px 14px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6);
+        }
+
         .leaflet-tooltip.spawn-tooltip {
             background: rgba(14, 14, 18, 0.95);
             border: 1px solid var(--accent-gold);
             color: var(--text-main);
-            padding: 8px 12px;
+            padding: 7px 11px;
             border-radius: 6px;
-            font-size: 12px;
-            line-height: 1.4;
+            font-size: 13px;
+            font-weight: 600;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
         }
 
-        /* Pulse / Flash Vector Animation */
         @keyframes vectorPulse {
-            0% {
-                stroke: #ffffff;
-                stroke-width: 6;
-                stroke-opacity: 1;
-                fill-opacity: 0.9;
-            }
-            50% {
-                stroke: #ffff00;
-                stroke-width: 10;
-                stroke-opacity: 1;
-                fill-opacity: 0.7;
-            }
-            100% {
-                stroke: #ffffff;
-                stroke-width: 6;
-                stroke-opacity: 1;
-                fill-opacity: 0.9;
-            }
+            0% { stroke: #ffffff; stroke-width: 6; stroke-opacity: 1; fill-opacity: 0.9; }
+            50% { stroke: #ffff00; stroke-width: 10; stroke-opacity: 1; fill-opacity: 0.7; }
+            100% { stroke: #ffffff; stroke-width: 6; stroke-opacity: 1; fill-opacity: 0.9; }
         }
 
         .vector-flash path {
@@ -277,33 +433,80 @@
 
     <aside id="sidebar">
         <div class="sidebar-header">
-            <h1>Laghaim Maps</h1>
+            <h1>Laghaim Atlas</h1>
+            <div class="tab-nav">
+                <button class="tab-btn active" id="tab-btn-zones" onclick="switchTab('zones')">🗺️ Zones</button>
+                <button class="tab-btn" id="tab-btn-tracker" onclick="switchTab('tracker')">⚔️ Kill Tracker</button>
+            </div>
         </div>
-        <ul class="zone-list" id="zone-list">
-            <!-- Dynamically populated -->
-        </ul>
+
+        <div id="zones-tab" class="tab-content active">
+            <ul class="zone-list" id="zone-list"></ul>
+        </div>
+
+        <div id="tracker-tab" class="tab-content">
+            <div class="tracker-toolbar">
+                <span id="daily-timer-text">Daily Resets: 00:00 UTC</span>
+                <button class="btn-reset" onclick="resetDailyCounts()">Reset Daily</button>
+            </div>
+            <ul class="tracker-sections-list" id="tracker-sections-container"></ul>
+        </div>
     </aside>
 
     <button id="sidebar-toggle" title="Toggle Sidebar" onclick="toggleSidebar()">☰</button>
+    <button id="clear-filter-btn" onclick="clearFocusFilter()">✕ Show All Spawns</button>
 
     <div id="map"></div>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
         const MAP_CONFIGS = {
-            laglamia: { name: "Laglamia", image: "maps/Laglamia.jpg", width: 1792, height: 2400 },
-            dekardi: { name: "Dekardi", image: "maps/Dekardi.jpg", width: 2048, height: 2048 },
-            dekadun_f3: { name: "Dekadun F3", image: "maps/Dekadun F3.jpg", width: 2048, height: 2048 },
-            dekadun_f4: { name: "Dekadun F4", image: "maps/Dekadun F4.jpg", width: 2048, height: 2048 },
-            dekeren_f2: { name: "Dekeren F2", image: "maps/Dekeren F2.jpg", width: 1440, height: 2912 },
-            shilon: { name: "Shilon", image: "maps/Shilon.jpg", width: 2048, height: 2048 }
+            laglamia:   { name: "Laglamia",   image: "maps/Laglamia.jpg",   width: 1792, height: 2400 },
+            dekardi:    { name: "Dekardi",    image: "maps/Dekardi.jpg",    width: 2048, height: 2048 },
+            dekadun:    { name: "Dekadun",    image: "maps/Dekadun.jpg",    width: 2816, height: 1504 },
+            dekeren: { name: "Dekeren", image: "maps/Dekeren.jpg", width: 1440, height: 3124 },
+            shilon:     { name: "Shilon",     image: "maps/Shilon.jpg",     width: 2048, height: 2048 }
         };
 
+        const TRACKER_STORAGE_KEY = 'laghaim_user_kill_tracker_v4';
         let currentMapId = 'laglamia';
         let allSpawnsData = {};
         let currentOverlay = null;
-        let spawnedLayers = []; // Stores references to active map vector layers
-        let flashInterval = null;
+        let spawnedLayers = []; 
+        let activeBossHighlight = null;
+
+        let playerKills = { _lastResetDate: new Date().toISOString().slice(0, 10), data: {} };
+        try {
+            const stored = localStorage.getItem(TRACKER_STORAGE_KEY);
+            if (stored) {
+                const parsed = JSON.parse(stored);
+                if (parsed && typeof parsed === 'object') {
+                    playerKills = {
+                        _lastResetDate: parsed._lastResetDate || new Date().toISOString().slice(0, 10),
+                        data: parsed.data || {}
+                    };
+                }
+            }
+        } catch(e) {
+            console.warn("Storage reset", e);
+        }
+
+        function verifyDailyReset() {
+            const today = new Date().toISOString().slice(0, 10);
+            if (playerKills._lastResetDate !== today) {
+                if (playerKills.data) {
+                    Object.keys(playerKills.data).forEach(key => {
+                        playerKills.data[key].daily = false;
+                    });
+                }
+                playerKills._lastResetDate = today;
+                savePlayerKills();
+            }
+        }
+
+        function savePlayerKills() {
+            localStorage.setItem(TRACKER_STORAGE_KEY, JSON.stringify(playerKills));
+        }
 
         const map = L.map('map', {
             crs: L.CRS.Simple,
@@ -316,24 +519,45 @@
 
         const spawnLayerGroup = L.layerGroup().addTo(map);
 
+        function getGroupedSpawns(mapId) {
+            const raw = allSpawnsData[mapId] || [];
+            const groups = {};
+
+            raw.forEach((item, index) => {
+                const name = (item.meta && item.meta.name && item.meta.name.trim()) ? item.meta.name.trim() : `Spawn #${index + 1}`;
+                const key = name.toLowerCase();
+
+                if (!groups[key]) {
+                    groups[key] = {
+                        name: name,
+                        instances: []
+                    };
+                }
+                groups[key].instances.push({ rawItem: item, originalIndex: index });
+            });
+
+            return groups;
+        }
+
         function renderSidebar() {
             const list = document.getElementById('zone-list');
             list.innerHTML = '';
 
             Object.keys(MAP_CONFIGS).forEach(key => {
                 const config = MAP_CONFIGS[key];
-                const spawns = allSpawnsData[key] || [];
+                const grouped = getGroupedSpawns(key);
+                const uniqueBossCount = Object.keys(grouped).length;
                 const isActive = (key === currentMapId);
 
                 const group = document.createElement('li');
                 group.className = `zone-group ${isActive ? 'active expanded' : ''}`;
                 group.id = `zone-group-${key}`;
 
-                // Header button (Accordion Toggle & Map Switcher)
                 const header = document.createElement('button');
                 header.className = 'zone-header';
                 header.onclick = () => {
                     if (currentMapId !== key) {
+                        clearFocusFilter();
                         switchMap(key);
                     } else {
                         group.classList.toggle('expanded');
@@ -343,33 +567,35 @@
                 header.innerHTML = `
                     <span>${config.name}</span>
                     <div class="meta-wrap">
-                        <span class="badge">${spawns.length}</span>
+                        <span class="badge" title="${uniqueBossCount} unique entities">${uniqueBossCount}</span>
                         <span class="accordion-arrow">▶</span>
                     </div>
                 `;
                 group.appendChild(header);
 
-                // Sublist of bosses
-                if (spawns.length > 0) {
+                if (uniqueBossCount > 0) {
                     const sublist = document.createElement('ul');
-                    sublist.className = 'boss-sublist';
+                    sublist.className = 'sublist-container';
 
-                    spawns.forEach((spawn, idx) => {
+                    Object.keys(grouped).forEach(bossKey => {
+                        const entry = grouped[bossKey];
                         const bossLi = document.createElement('li');
                         const bossBtn = document.createElement('button');
                         bossBtn.className = 'boss-btn';
-                        bossBtn.id = `boss-btn-${key}-${idx}`;
+                        bossBtn.id = `boss-btn-${key}-${bossKey.replace(/\s+/g, '_')}`;
+                        
                         bossBtn.onclick = (e) => {
                             e.stopPropagation();
-                            focusSpawn(key, idx);
+                            focusBossEntities(key, bossKey);
                         };
 
-                        const bossName = (spawn.meta && spawn.meta.name) ? spawn.meta.name : `Spawn #${idx + 1}`;
-                        const bossTimer = (spawn.meta && spawn.meta.timer) ? spawn.meta.timer : '';
+                        const locBadge = entry.instances.length > 1 
+                            ? `<span class="sub-badge" title="Can spawn in ${entry.instances.length} locations">${entry.instances.length} Locs</span>` 
+                            : '';
 
                         bossBtn.innerHTML = `
-                            <span>${bossName}</span>
-                            <span class="boss-timer">${bossTimer}</span>
+                            <span>${entry.name}</span>
+                            ${locBadge}
                         `;
                         bossLi.appendChild(bossBtn);
                         sublist.appendChild(bossLi);
@@ -387,9 +613,7 @@
             const config = MAP_CONFIGS[mapId];
             if (!config) return;
 
-            if (currentOverlay) {
-                map.removeLayer(currentOverlay);
-            }
+            if (currentOverlay) map.removeLayer(currentOverlay);
             spawnLayerGroup.clearLayers();
             spawnedLayers = [];
 
@@ -417,23 +641,22 @@
                 if (layer) {
                     layer.spawnIndex = idx;
                     layer.originalOptions = { ...item.options };
+                    const bossName = (item.meta && item.meta.name && item.meta.name.trim()) ? item.meta.name.trim() : 'Unknown';
+                    layer.bossKey = bossName.toLowerCase();
 
-                    if (item.meta) {
-                        const borderColor = (item.options && item.options.color) ? item.options.color : '#ff4444';
-                        layer.bindTooltip(`<strong>${item.meta.name}</strong><br><span style="color: #bbb;">Respawn:</span> ${item.meta.timer}`, {
-                            direction: 'top',
-                            className: 'spawn-tooltip'
-                        });
-                        layer.on('tooltipopen', function(e) {
-                            if (e.tooltip && e.tooltip._container) {
-                                e.tooltip._container.style.borderColor = borderColor;
-                            }
-                        });
-                    }
+                    const borderColor = (item.options && item.options.color) ? item.options.color : '#ff4444';
+                    layer.bindTooltip(`<strong>${bossName}</strong>`, {
+                        direction: 'top',
+                        className: 'spawn-tooltip'
+                    });
+                    layer.on('tooltipopen', function(e) {
+                        if (e.tooltip && e.tooltip._container) {
+                            e.tooltip._container.style.borderColor = borderColor;
+                        }
+                    });
 
-                    // Clicking the shape directly selects it in the sidebar
                     layer.on('click', () => {
-                        highlightSidebarBoss(currentMapId, idx);
+                        focusBossEntities(currentMapId, layer.bossKey);
                     });
 
                     spawnLayerGroup.addLayer(layer);
@@ -442,81 +665,229 @@
             });
         }
 
-        function focusSpawn(mapId, spawnIdx) {
-            // If selecting a boss from a different map, load that map first
+        function focusBossEntities(mapId, bossKey) {
             if (currentMapId !== mapId) {
-                switchMap(mapId, () => {
-                    executeZoomAndFlash(spawnIdx);
-                });
+                switchMap(mapId, () => executeMultiFocus(bossKey));
             } else {
-                executeZoomAndFlash(spawnIdx);
+                executeMultiFocus(bossKey);
             }
 
-            highlightSidebarBoss(mapId, spawnIdx);
+            document.querySelectorAll('.boss-btn').forEach(b => b.classList.remove('highlighted'));
+            const btn = document.getElementById(`boss-btn-${mapId}-${bossKey.replace(/\s+/g, '_')}`);
+            if (btn) btn.classList.add('highlighted');
         }
 
-        function executeZoomAndFlash(spawnIdx) {
-            const layer = spawnedLayers[spawnIdx];
-            if (!layer) return;
+        function executeMultiFocus(bossKey) {
+            activeBossHighlight = bossKey;
+            document.getElementById('clear-filter-btn').style.display = 'block';
 
-            // Pan and zoom smoothly to the vector target
-            if (layer.getBounds) {
-                map.flyToBounds(layer.getBounds(), { maxZoom: 1, padding: [80, 80], duration: 0.6 });
-            } else if (layer.getLatLng) {
-                map.flyTo(layer.getLatLng(), 0.5, { duration: 0.6 });
-            }
+            const matchingLayers = [];
+            const allBounds = L.latLngBounds([]);
 
-            layer.openTooltip();
-            flashLayer(layer);
-        }
+            spawnedLayers.forEach(layer => {
+                if (!layer) return;
 
-        function flashLayer(layer) {
-            if (layer._path) {
-                // Add CSS pulse class to SVG path element
-                layer._path.classList.add('vector-flash');
-                setTimeout(() => {
-                    if (layer._path) {
-                        layer._path.classList.remove('vector-flash');
+                if (layer.bossKey === bossKey) {
+                    matchingLayers.push(layer);
+
+                    if (layer.setStyle) {
+                        layer.setStyle({
+                            fillOpacity: layer.originalOptions.fillOpacity || 0.45,
+                            opacity: 1
+                        });
                     }
-                }, 2200);
-            } else if (layer instanceof L.Marker && layer._icon) {
-                // Marker icon pulse
-                layer._icon.style.filter = 'drop-shadow(0 0 16px gold) brightness(1.8)';
-                layer._icon.style.transition = 'all 0.3s ease';
-                setTimeout(() => {
-                    if (layer._icon) {
-                        layer._icon.style.filter = '';
+                    if (layer._path) layer._path.classList.add('vector-flash');
+                    layer.openTooltip();
+
+                    if (layer.getBounds) allBounds.extend(layer.getBounds());
+                    else if (layer.getLatLng) allBounds.extend(layer.getLatLng());
+                } else {
+                    if (layer.setStyle) {
+                        layer.setStyle({
+                            fillOpacity: 0.05,
+                            opacity: 0.15
+                        });
                     }
-                }, 2200);
+                    if (layer._path) layer._path.classList.remove('vector-flash');
+                    layer.closeTooltip();
+                }
+            });
+
+            if (allBounds.isValid()) {
+                map.panTo(allBounds.getCenter(), { animate: true, duration: 0.5 });
             }
         }
 
-        function highlightSidebarBoss(mapId, spawnIdx) {
-            document.querySelectorAll('.boss-btn').forEach(btn => btn.classList.remove('highlighted'));
-            const btn = document.getElementById(`boss-btn-${mapId}-${spawnIdx}`);
-            if (btn) {
-                btn.classList.add('highlighted');
-                btn.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        function clearFocusFilter() {
+            activeBossHighlight = null;
+            document.getElementById('clear-filter-btn').style.display = 'none';
+            document.querySelectorAll('.boss-btn').forEach(b => b.classList.remove('highlighted'));
+
+            spawnedLayers.forEach(layer => {
+                if (!layer) return;
+                if (layer.setStyle && layer.originalOptions) {
+                    layer.setStyle(layer.originalOptions);
+                }
+                if (layer._path) layer._path.classList.remove('vector-flash');
+            });
+        }
+
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+
+            if (tabId === 'zones') {
+                document.getElementById('tab-btn-zones').classList.add('active');
+                document.getElementById('zones-tab').classList.add('active');
+            } else {
+                document.getElementById('tab-btn-tracker').classList.add('active');
+                document.getElementById('tracker-tab').classList.add('active');
+                renderTrackerCards();
             }
+        }
+
+        function renderTrackerCards() {
+            const container = document.getElementById('tracker-sections-container');
+            container.innerHTML = '';
+
+            let totalBossCount = 0;
+
+            Object.keys(MAP_CONFIGS).forEach(mapKey => {
+                const mapConfig = MAP_CONFIGS[mapKey];
+                const grouped = getGroupedSpawns(mapKey);
+                const bossKeys = Object.keys(grouped);
+
+                if (bossKeys.length === 0) return;
+
+                totalBossCount += bossKeys.length;
+
+                const groupLi = document.createElement('li');
+                groupLi.className = `zone-group ${mapKey === currentMapId ? 'expanded' : ''}`;
+                groupLi.id = `tracker-group-${mapKey}`;
+
+                const header = document.createElement('button');
+                header.className = 'zone-header';
+                header.onclick = () => groupLi.classList.toggle('expanded');
+
+                header.innerHTML = `
+                    <span>${mapConfig.name}</span>
+                    <div class="meta-wrap">
+                        <span class="badge">${bossKeys.length}</span>
+                        <span class="accordion-arrow">▶</span>
+                    </div>
+                `;
+                groupLi.appendChild(header);
+
+                const sublist = document.createElement('ul');
+                sublist.className = 'sublist-container';
+
+                bossKeys.forEach(bossKey => {
+                    const boss = grouped[bossKey];
+                    const stats = (playerKills.data && playerKills.data[bossKey]) ? playerKills.data[bossKey] : { lifetime: 0, daily: false };
+                    const lifetimeCount = stats.lifetime || 0;
+                    const isDailyDone = !!stats.daily;
+
+                    let tierClass = '';
+                    if (lifetimeCount >= 10) tierClass = 'tier-gold';
+                    else if (lifetimeCount >= 1) tierClass = 'tier-bronze';
+
+                    const itemLi = document.createElement('li');
+                    itemLi.className = 'tracker-row';
+
+                    itemLi.innerHTML = `
+                        <button class="tracker-name-btn" title="Go to ${boss.name} on ${mapConfig.name}" onclick="focusBossFromTracker('${mapKey}', '${bossKey}')">
+                            ${boss.name}
+                        </button>
+
+                        <div class="tracker-controls">
+                            <button class="daily-toggle-btn ${isDailyDone ? 'checked' : ''}" onclick="toggleDailyStatus('${bossKey}')" title="Toggle Daily Reset Status">
+                                ${isDailyDone ? '✔ Done' : 'Daily'}
+                            </button>
+
+                            <div class="lifetime-stepper">
+                                <button onclick="adjustLifetime('${bossKey}', -1)" ${lifetimeCount <= 0 ? 'disabled' : ''}>-</button>
+                                <span class="lifetime-counter ${tierClass}" title="Lifetime Kills (Max 10)">${lifetimeCount}/10</span>
+                                <button onclick="adjustLifetime('${bossKey}', 1)" ${lifetimeCount >= 10 ? 'disabled' : ''}>+</button>
+                            </div>
+                        </div>
+                    `;
+                    sublist.appendChild(itemLi);
+                });
+
+                groupLi.appendChild(sublist);
+                container.appendChild(groupLi);
+            });
+
+            if (totalBossCount === 0) {
+                container.innerHTML = `
+                    <div style="padding: 24px 10px; text-align: center; color: #777; font-size: 12px; line-height: 1.5;">
+                        No bosses loaded yet.<br>
+                        Make sure shapes have names assigned in the editor.
+                    </div>`;
+            }
+        }
+
+        function adjustLifetime(bossKey, delta) {
+            if (!playerKills.data) playerKills.data = {};
+            if (!playerKills.data[bossKey]) {
+                playerKills.data[bossKey] = { lifetime: 0, daily: false };
+            }
+
+            const current = playerKills.data[bossKey];
+            current.lifetime = Math.min(10, Math.max(0, (current.lifetime || 0) + delta));
+
+            savePlayerKills();
+            renderTrackerCards();
+        }
+
+        function toggleDailyStatus(bossKey) {
+            if (!playerKills.data) playerKills.data = {};
+            if (!playerKills.data[bossKey]) {
+                playerKills.data[bossKey] = { lifetime: 0, daily: false };
+            }
+
+            playerKills.data[bossKey].daily = !playerKills.data[bossKey].daily;
+
+            savePlayerKills();
+            renderTrackerCards();
+        }
+
+        function resetDailyCounts() {
+            if (confirm("Reset daily completion status for all bosses? (Lifetime 0-10 progress remains)")) {
+                if (playerKills.data) {
+                    Object.keys(playerKills.data).forEach(key => {
+                        playerKills.data[key].daily = false;
+                    });
+                }
+                playerKills._lastResetDate = new Date().toISOString().slice(0, 10);
+                savePlayerKills();
+                renderTrackerCards();
+            }
+        }
+
+        function focusBossFromTracker(mapId, bossKey) {
+            focusBossEntities(mapId, bossKey);
         }
 
         function toggleSidebar() {
             const sidebar = document.getElementById('sidebar');
             sidebar.classList.toggle('collapsed');
-            setTimeout(() => {
-                map.invalidateSize();
-            }, 300);
+            setTimeout(() => { map.invalidateSize(); }, 300);
         }
 
-        fetch('spawns.json')
+        verifyDailyReset();
+
+        fetch('spawns.json?t=' + Date.now())
             .then(res => res.json())
             .then(data => {
                 allSpawnsData = data;
                 switchMap(currentMapId);
+                renderTrackerCards();
             })
             .catch(err => {
                 console.warn("Could not load spawns.json; initializing default map.", err);
                 switchMap(currentMapId);
+                renderTrackerCards();
             });
     </script>
 </body>
