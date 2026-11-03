@@ -482,24 +482,24 @@
       }
     },
     {
-      "type": "polygon",
+      "type": "rectangle",
       "latlngs": [
         [
           {
-            "lat": 1329.3607486307092,
-            "lng": 2242.9427099237287
+            "lat": 444.834203669215,
+            "lng": 1515.2953402871938
           },
           {
-            "lat": 1245.9221484506966,
-            "lng": 2242.9427099237287
+            "lat": 803.0560765672974,
+            "lng": 1515.2953402871938
           },
           {
-            "lat": 1248.7505755754428,
-            "lng": 2463.5600256539315
+            "lat": 803.0560765672974,
+            "lng": 1695.2471731514886
           },
           {
-            "lat": 1329.3607486307092,
-            "lng": 2462.145812091558
+            "lat": 444.834203669215,
+            "lng": 1695.2471731514886
           }
         ]
       ],
@@ -512,43 +512,31 @@
         "fill": true,
         "fillColor": "#a855f7",
         "fillOpacity": 0.35,
-        "clickable": true,
-        "dashArray": null,
-        "maintainColor": false,
-        "smoothFactor": 1,
-        "noClip": false,
-        "lineCap": "round",
-        "lineJoin": "round",
-        "dashOffset": null,
-        "fillRule": "evenodd",
-        "interactive": true,
-        "bubblingMouseEvents": true,
-        "pane": "overlayPane",
-        "attribution": null
+        "clickable": true
       },
       "meta": {
         "name": "Grubnash the Orchard Ogre"
       }
     },
     {
-      "type": "polygon",
+      "type": "rectangle",
       "latlngs": [
         [
           {
-            "lat": 574.1707063234766,
-            "lng": 1507.5516574897192
+            "lat": 1097.4297244015218,
+            "lng": 1875.247183706724
           },
           {
-            "lat": 569.9280656363572,
-            "lng": 1634.8308781032977
+            "lat": 1210.5668093913694,
+            "lng": 1875.247183706724
           },
           {
-            "lat": 345.0681092190352,
-            "lng": 1637.6593052280439
+            "lat": 1210.5668093913694,
+            "lng": 2039.295956942003
           },
           {
-            "lat": 328.09754647055803,
-            "lng": 1511.7942981768385
+            "lat": 1097.4297244015218,
+            "lng": 2039.295956942003
           }
         ]
       ],
@@ -561,43 +549,31 @@
         "fill": true,
         "fillColor": "#a855f7",
         "fillOpacity": 0.35,
-        "clickable": true,
-        "dashArray": null,
-        "maintainColor": false,
-        "smoothFactor": 1,
-        "noClip": false,
-        "lineCap": "round",
-        "lineJoin": "round",
-        "dashOffset": null,
-        "fillRule": "evenodd",
-        "interactive": true,
-        "bubblingMouseEvents": true,
-        "pane": "overlayPane",
-        "attribution": null
+        "clickable": true
       },
       "meta": {
         "name": "Grubnash the Orchard Ogre"
       }
     },
     {
-      "type": "polygon",
+      "type": "rectangle",
       "latlngs": [
         [
           {
-            "lat": 567.099638511611,
-            "lng": 2008.1832585697948
+            "lat": 566.7641838810036,
+            "lng": 1987.0382292445274
           },
           {
-            "lat": 565.6854249492379,
-            "lng": 2091.6218587498074
+            "lat": 773.6247020334174,
+            "lng": 1987.0382292445274
           },
           {
-            "lat": 799.0306627407987,
-            "lng": 2070.408655314211
+            "lat": 773.6247020334174,
+            "lng": 2103.922830964794
           },
           {
-            "lat": 794.7880220536794,
-            "lng": 1981.313200884706
+            "lat": 566.7641838810036,
+            "lng": 2103.922830964794
           }
         ]
       ],
@@ -610,22 +586,84 @@
         "fill": true,
         "fillColor": "#ff3333",
         "fillOpacity": 0.35,
-        "clickable": true,
-        "dashArray": null,
-        "maintainColor": false,
-        "smoothFactor": 1,
-        "noClip": false,
-        "lineCap": "round",
-        "lineJoin": "round",
-        "dashOffset": null,
-        "fillRule": "evenodd",
-        "interactive": true,
-        "bubblingMouseEvents": true,
-        "pane": "overlayPane",
-        "attribution": null
+        "clickable": true
       },
       "meta": {
         "name": "Elderbark the Ancient"
+      }
+    },
+    {
+      "type": "rectangle",
+      "latlngs": [
+        [
+          {
+            "lat": 95.86219133892347,
+            "lng": 1547.2494040668348
+          },
+          {
+            "lat": 355.69918365232127,
+            "lng": 1547.2494040668348
+          },
+          {
+            "lat": 355.69918365232127,
+            "lng": 1833.1541852530977
+          },
+          {
+            "lat": 95.86219133892347,
+            "lng": 1833.1541852530977
+          }
+        ]
+      ],
+      "radius": null,
+      "options": {
+        "stroke": true,
+        "color": "#ff3333",
+        "weight": 2,
+        "opacity": 0.5,
+        "fill": true,
+        "fillColor": "#ff3333",
+        "fillOpacity": 0.35,
+        "clickable": true
+      },
+      "meta": {
+        "name": "Elderbark the Ancient"
+      }
+    },
+    {
+      "type": "rectangle",
+      "latlngs": [
+        [
+          {
+            "lat": 1258,
+            "lng": 2238
+          },
+          {
+            "lat": 1327,
+            "lng": 2238
+          },
+          {
+            "lat": 1327,
+            "lng": 2390.5
+          },
+          {
+            "lat": 1258,
+            "lng": 2390.5
+          }
+        ]
+      ],
+      "radius": null,
+      "options": {
+        "stroke": true,
+        "color": "#a855f7",
+        "weight": 2,
+        "opacity": 0.5,
+        "fill": true,
+        "fillColor": "#a855f7",
+        "fillOpacity": 0.35,
+        "clickable": true
+      },
+      "meta": {
+        "name": "Grubnash the Orchard Ogre"
       }
     }
   ],
@@ -749,24 +787,24 @@
       }
     },
     {
-      "type": "polygon",
+      "type": "rectangle",
       "latlngs": [
         [
           {
-            "lat": 2754.776656371169,
-            "lng": 916.5770926265488
+            "lat": 2576,
+            "lng": 1107
           },
           {
-            "lat": 2763.185620523706,
-            "lng": 1093.165339829829
+            "lat": 2756,
+            "lng": 1107
           },
           {
-            "lat": 2537.8253812357107,
-            "lng": 1094.8471326603365
+            "lat": 2756,
+            "lng": 1283
           },
           {
-            "lat": 2552.9615167102775,
-            "lng": 919.9406782875637
+            "lat": 2576,
+            "lng": 1283
           }
         ]
       ],
@@ -779,92 +817,31 @@
         "fill": true,
         "fillColor": "#a855f7",
         "fillOpacity": 0.35,
-        "clickable": true,
-        "dashArray": null,
-        "maintainColor": false,
-        "smoothFactor": 1,
-        "noClip": false,
-        "lineCap": "round",
-        "lineJoin": "round",
-        "dashOffset": null,
-        "fillRule": "evenodd",
-        "interactive": true,
-        "bubblingMouseEvents": true,
-        "pane": "overlayPane",
-        "attribution": null
-      },
-      "meta": {
-        "name": "Bonechewer"
-      }
-    },
-    {
-      "type": "polygon",
-      "latlngs": [
-        [
-          {
-            "lat": 2758,
-            "lng": 1110
-          },
-          {
-            "lat": 2760.5448737522815,
-            "lng": 1267.1353518862932
-          },
-          {
-            "lat": 2560,
-            "lng": 1266
-          },
-          {
-            "lat": 2556,
-            "lng": 1106
-          }
-        ]
-      ],
-      "radius": null,
-      "options": {
-        "stroke": true,
-        "color": "#a855f7",
-        "weight": 2,
-        "opacity": 0.5,
-        "fill": true,
-        "fillColor": "#a855f7",
-        "fillOpacity": 0.35,
-        "clickable": true,
-        "dashArray": null,
-        "maintainColor": false,
-        "smoothFactor": 1,
-        "noClip": false,
-        "lineCap": "round",
-        "lineJoin": "round",
-        "dashOffset": null,
-        "fillRule": "evenodd",
-        "interactive": true,
-        "bubblingMouseEvents": true,
-        "pane": "overlayPane",
-        "attribution": null
+        "clickable": true
       },
       "meta": {
         "name": "Deadwood the Hollow"
       }
     },
     {
-      "type": "polygon",
+      "type": "rectangle",
       "latlngs": [
         [
           {
-            "lat": 2687.0057685088805,
-            "lng": 110.30865786510141
+            "lat": 2579,
+            "lng": 909
           },
           {
-            "lat": 2844,
-            "lng": 110
+            "lat": 2751,
+            "lng": 909
           },
           {
-            "lat": 2844,
-            "lng": 300
+            "lat": 2751,
+            "lng": 1085
           },
           {
-            "lat": 2680,
-            "lng": 304
+            "lat": 2579,
+            "lng": 1085
           }
         ]
       ],
@@ -877,19 +854,44 @@
         "fill": true,
         "fillColor": "#a855f7",
         "fillOpacity": 0.35,
-        "clickable": true,
-        "dashArray": null,
-        "maintainColor": false,
-        "smoothFactor": 1,
-        "noClip": false,
-        "lineCap": "round",
-        "lineJoin": "round",
-        "dashOffset": null,
-        "fillRule": "evenodd",
-        "interactive": true,
-        "bubblingMouseEvents": true,
-        "pane": "overlayPane",
-        "attribution": null
+        "clickable": true
+      },
+      "meta": {
+        "name": "Bonechewer"
+      }
+    },
+    {
+      "type": "rectangle",
+      "latlngs": [
+        [
+          {
+            "lat": 2662,
+            "lng": 102
+          },
+          {
+            "lat": 2784,
+            "lng": 102
+          },
+          {
+            "lat": 2784,
+            "lng": 280
+          },
+          {
+            "lat": 2662,
+            "lng": 280
+          }
+        ]
+      ],
+      "radius": null,
+      "options": {
+        "stroke": true,
+        "color": "#a855f7",
+        "weight": 2,
+        "opacity": 0.5,
+        "fill": true,
+        "fillColor": "#a855f7",
+        "fillOpacity": 0.35,
+        "clickable": true
       },
       "meta": {
         "name": "Bonechewer"
@@ -898,24 +900,24 @@
   ],
   "shilon": [
     {
-      "type": "polygon",
+      "type": "rectangle",
       "latlngs": [
         [
           {
-            "lat": 1106.6196824738884,
-            "lng": 1584.2488463379982
+            "lat": 1700.292551643011,
+            "lng": 104.2711554914606
           },
           {
-            "lat": 1239.4813160839753,
-            "lng": 1434.569284422837
+            "lat": 1876.8807988462909,
+            "lng": 104.2711554914606
           },
           {
-            "lat": 1172.2096028636781,
-            "lng": 1333.6617145923913
+            "lat": 1876.8807988462909,
+            "lng": 290.9501596777852
           },
           {
-            "lat": 993.9395628298906,
-            "lng": 1574.1580893549537
+            "lat": 1700.292551643011,
+            "lng": 290.9501596777852
           }
         ]
       ],
@@ -942,28 +944,28 @@
         "attribution": null
       },
       "meta": {
-        "name": "Mirebank the Marsh Ancient"
+        "name": "Thunderhide"
       }
     },
     {
-      "type": "polygon",
+      "type": "rectangle",
       "latlngs": [
         [
           {
-            "lat": 913.2135069655341,
-            "lng": 1446.341834236389
+            "lat": 830.80565827067,
+            "lng": 1126.8011964399775
           },
           {
-            "lat": 805.5787658130586,
-            "lng": 1353.8432285584804
+            "lat": 990.5759771688757,
+            "lng": 1126.8011964399775
           },
           {
-            "lat": 881.2594431858929,
-            "lng": 1217.6180092873788
+            "lat": 990.5759771688757,
+            "lng": 1325.2527504398543
           },
           {
-            "lat": 1012.4392839654723,
-            "lng": 1333.6617145923913
+            "lat": 830.80565827067,
+            "lng": 1325.2527504398543
           }
         ]
       ],
@@ -994,24 +996,24 @@
       }
     },
     {
-      "type": "polygon",
+      "type": "rectangle",
       "latlngs": [
         [
           {
-            "lat": 1856.6992848802017,
-            "lng": 55.49916340674516
+            "lat": 951.8947420672049,
+            "lng": 1337.0253002534062
           },
           {
-            "lat": 1856.6992848802017,
-            "lng": 243.85996042357723
+            "lat": 1128.482989270485,
+            "lng": 1337.0253002534062
           },
           {
-            "lat": 1698.6107588125035,
-            "lng": 257.3143030676367
+            "lat": 1128.482989270485,
+            "lng": 1535.476854253283
           },
           {
-            "lat": 1691.8835874904737,
-            "lng": 60.54454189826745
+            "lat": 951.8947420672049,
+            "lng": 1535.476854253283
           }
         ]
       ],
@@ -1038,7 +1040,7 @@
         "attribution": null
       },
       "meta": {
-        "name": "Thunderhide"
+        "name": "Mirebank the Marsh Ancient"
       }
     }
   ],
@@ -1074,31 +1076,333 @@
         "fill": true,
         "fillColor": "#a855f7",
         "fillOpacity": 0.35,
-        "clickable": true
+        "clickable": true,
+        "dashArray": null,
+        "maintainColor": false,
+        "smoothFactor": 1,
+        "noClip": false,
+        "lineCap": "round",
+        "lineJoin": "round",
+        "dashOffset": null,
+        "fillRule": "evenodd",
+        "interactive": true,
+        "bubblingMouseEvents": true,
+        "pane": "overlayPane",
+        "attribution": null
       },
       "meta": {
         "name": "Magmajaw"
       }
     },
     {
-      "type": "polygon",
+      "type": "rectangle",
       "latlngs": [
         [
           {
-            "lat": 702,
-            "lng": 1454
+            "lat": 866.2058069535207,
+            "lng": 855.5992052357225
           },
           {
-            "lat": 698,
-            "lng": 1548
+            "lat": 926.3098833543772,
+            "lng": 855.5992052357225
           },
           {
-            "lat": 856,
-            "lng": 1554
+            "lat": 926.3098833543772,
+            "lng": 931.9667376038695
           },
           {
-            "lat": 850,
-            "lng": 1452
+            "lat": 866.2058069535207,
+            "lng": 931.9667376038695
+          }
+        ]
+      ],
+      "radius": null,
+      "options": {
+        "stroke": true,
+        "color": "#a855f7",
+        "weight": 2,
+        "opacity": 0.5,
+        "fill": true,
+        "fillColor": "#a855f7",
+        "fillOpacity": 0.35,
+        "clickable": true,
+        "smoothFactor": 1,
+        "noClip": false,
+        "lineCap": "round",
+        "lineJoin": "round",
+        "dashArray": null,
+        "dashOffset": null,
+        "fillRule": "evenodd",
+        "interactive": true,
+        "bubblingMouseEvents": true,
+        "pane": "overlayPane",
+        "attribution": null
+      },
+      "meta": {
+        "name": "Reefbreaker"
+      }
+    },
+    {
+      "type": "rectangle",
+      "latlngs": [
+        [
+          {
+            "lat": 866.9129137347072,
+            "lng": 938.3306986345485
+          },
+          {
+            "lat": 927.0169901355638,
+            "lng": 938.3306986345485
+          },
+          {
+            "lat": 927.0169901355638,
+            "lng": 1021.7692988145611
+          },
+          {
+            "lat": 866.9129137347072,
+            "lng": 1021.7692988145611
+          }
+        ]
+      ],
+      "radius": null,
+      "options": {
+        "stroke": true,
+        "color": "#a855f7",
+        "weight": 2,
+        "opacity": 0.5,
+        "fill": true,
+        "fillColor": "#a855f7",
+        "fillOpacity": 0.35,
+        "clickable": true,
+        "smoothFactor": 1,
+        "noClip": false,
+        "lineCap": "round",
+        "lineJoin": "round",
+        "dashArray": null,
+        "dashOffset": null,
+        "fillRule": "evenodd",
+        "interactive": true,
+        "bubblingMouseEvents": true,
+        "pane": "overlayPane",
+        "attribution": null
+      },
+      "meta": {
+        "name": "Scorch the Arsonist"
+      }
+    },
+    {
+      "type": "rectangle",
+      "latlngs": [
+        [
+          {
+            "lat": 867.6200205158938,
+            "lng": 1178.0398974567881
+          },
+          {
+            "lat": 925.6027765731907,
+            "lng": 1178.0398974567881
+          },
+          {
+            "lat": 925.6027765731907,
+            "lng": 1240.9724009823908
+          },
+          {
+            "lat": 867.6200205158938,
+            "lng": 1240.9724009823908
+          }
+        ]
+      ],
+      "radius": null,
+      "options": {
+        "stroke": true,
+        "color": "#a855f7",
+        "weight": 2,
+        "opacity": 0.5,
+        "fill": true,
+        "fillColor": "#a855f7",
+        "fillOpacity": 0.35,
+        "clickable": true,
+        "smoothFactor": 1,
+        "noClip": false,
+        "lineCap": "round",
+        "lineJoin": "round",
+        "dashArray": null,
+        "dashOffset": null,
+        "fillRule": "evenodd",
+        "interactive": true,
+        "bubblingMouseEvents": true,
+        "pane": "overlayPane",
+        "attribution": null
+      },
+      "meta": {
+        "name": "Scorch the Arsonist"
+      }
+    },
+    {
+      "type": "rectangle",
+      "latlngs": [
+        [
+          {
+            "lat": 767.9179643685906,
+            "lng": 1471.4892116492053
+          },
+          {
+            "lat": 853.4778848921628,
+            "lng": 1471.4892116492053
+          },
+          {
+            "lat": 853.4778848921628,
+            "lng": 1542.19988976786
+          },
+          {
+            "lat": 767.9179643685906,
+            "lng": 1542.19988976786
+          }
+        ]
+      ],
+      "radius": null,
+      "options": {
+        "stroke": true,
+        "color": "#a855f7",
+        "weight": 2,
+        "opacity": 0.5,
+        "fill": true,
+        "fillColor": "#a855f7",
+        "fillOpacity": 0.35,
+        "clickable": true,
+        "smoothFactor": 1,
+        "noClip": false,
+        "lineCap": "round",
+        "lineJoin": "round",
+        "dashArray": null,
+        "dashOffset": null,
+        "fillRule": "evenodd",
+        "interactive": true,
+        "bubblingMouseEvents": true,
+        "pane": "overlayPane",
+        "attribution": null
+      },
+      "meta": {
+        "name": "Reefbreaker"
+      }
+    },
+    {
+      "type": "rectangle",
+      "latlngs": [
+        [
+          {
+            "lat": 783.4743135546946,
+            "lng": 919.2388155425117
+          },
+          {
+            "lat": 846.4068170802973,
+            "lng": 919.2388155425117
+          },
+          {
+            "lat": 846.4068170802973,
+            "lng": 992.7779207859127
+          },
+          {
+            "lat": 783.4743135546946,
+            "lng": 992.7779207859127
+          }
+        ]
+      ],
+      "radius": null,
+      "options": {
+        "stroke": true,
+        "color": "#ff3333",
+        "weight": 2,
+        "opacity": 0.5,
+        "fill": true,
+        "fillColor": "#ff3333",
+        "fillOpacity": 0.35,
+        "clickable": true,
+        "smoothFactor": 1,
+        "noClip": false,
+        "lineCap": "round",
+        "lineJoin": "round",
+        "dashArray": null,
+        "dashOffset": null,
+        "fillRule": "evenodd",
+        "interactive": true,
+        "bubblingMouseEvents": true,
+        "pane": "overlayPane",
+        "attribution": null
+      },
+      "meta": {
+        "name": "Cinderheart the Magma Drake"
+      }
+    },
+    {
+      "type": "rectangle",
+      "latlngs": [
+        [
+          {
+            "lat": 720.5418100290918,
+            "lng": 894.4900782009826
+          },
+          {
+            "lat": 771.4534982745233,
+            "lng": 894.4900782009826
+          },
+          {
+            "lat": 771.4534982745233,
+            "lng": 987.1210665364202
+          },
+          {
+            "lat": 720.5418100290918,
+            "lng": 987.1210665364202
+          }
+        ]
+      ],
+      "radius": null,
+      "options": {
+        "stroke": true,
+        "color": "#ff3333",
+        "weight": 2,
+        "opacity": 0.5,
+        "fill": true,
+        "fillColor": "#ff3333",
+        "fillOpacity": 0.35,
+        "clickable": true,
+        "smoothFactor": 1,
+        "noClip": false,
+        "lineCap": "round",
+        "lineJoin": "round",
+        "dashArray": null,
+        "dashOffset": null,
+        "fillRule": "evenodd",
+        "interactive": true,
+        "bubblingMouseEvents": true,
+        "pane": "overlayPane",
+        "attribution": null
+      },
+      "meta": {
+        "name": "The Drowned Queen"
+      }
+    }
+  ],
+  "paros": [
+    {
+      "type": "rectangle",
+      "latlngs": [
+        [
+          {
+            "lat": 327,
+            "lng": 427
+          },
+          {
+            "lat": 440,
+            "lng": 427
+          },
+          {
+            "lat": 440,
+            "lng": 504
+          },
+          {
+            "lat": 327,
+            "lng": 504
           }
         ]
       ],
@@ -1114,7 +1418,81 @@
         "clickable": true
       },
       "meta": {
-        "name": "Reefbreaker"
+        "name": "Windspear"
+      }
+    },
+    {
+      "type": "rectangle",
+      "latlngs": [
+        [
+          {
+            "lat": 460,
+            "lng": 711
+          },
+          {
+            "lat": 557,
+            "lng": 711
+          },
+          {
+            "lat": 557,
+            "lng": 787
+          },
+          {
+            "lat": 460,
+            "lng": 787
+          }
+        ]
+      ],
+      "radius": null,
+      "options": {
+        "stroke": true,
+        "color": "#a855f7",
+        "weight": 2,
+        "opacity": 0.5,
+        "fill": true,
+        "fillColor": "#a855f7",
+        "fillOpacity": 0.35,
+        "clickable": true
+      },
+      "meta": {
+        "name": "Skywatch Drone"
+      }
+    },
+    {
+      "type": "rectangle",
+      "latlngs": [
+        [
+          {
+            "lat": 630,
+            "lng": 638
+          },
+          {
+            "lat": 682,
+            "lng": 638
+          },
+          {
+            "lat": 682,
+            "lng": 738
+          },
+          {
+            "lat": 630,
+            "lng": 738
+          }
+        ]
+      ],
+      "radius": null,
+      "options": {
+        "stroke": true,
+        "color": "#a855f7",
+        "weight": 2,
+        "opacity": 0.5,
+        "fill": true,
+        "fillColor": "#a855f7",
+        "fillOpacity": 0.35,
+        "clickable": true
+      },
+      "meta": {
+        "name": "Cloudbreaker"
       }
     }
   ]
